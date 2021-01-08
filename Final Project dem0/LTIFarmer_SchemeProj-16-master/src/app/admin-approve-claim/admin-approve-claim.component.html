@@ -1,0 +1,42 @@
+<div class="banner3" id="banner3">
+    <div class="bg-overlay2">
+
+<div class="contact" id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="text-center">
+                    <h3>Approve Insuarance Claim</h3>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <table class="table">
+                    <thead>
+                        <th>Claim id</th>
+                        <th>Policy No</th>
+                        <th>Cause Of Claim</th>
+                        <th>Date Of Incident</th>
+                        <th>Date Of Claim</th>
+                        <th>Amount Claimed</th>
+                        <th>&nbsp;&nbsp;&nbsp;Action</th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let c of unapprovedclaims">
+                            <td>{{c.Cliamid}}</td>
+                            <td>{{c.PolicyNo}}</td>
+                            <td>{{c.CauseOfClaim}}</td>
+                            <td>{{c.DateOfLoss|date:'shortDate'}}</td>
+                            <td>{{c.DateOfClaim|date:'shortDate'}}</td>
+                            <td>{{c.AmountClaimed}}</td>
+                            <td><button type="button" class="contact-button2" style="background:green;" (click)="approveClaim(c.Cliamid)">Approve Claim</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
+</div>

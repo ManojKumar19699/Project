@@ -1,0 +1,139 @@
+<div class="banner" id="banner">
+    <div class="bg-overlay2">
+
+<div class="contact" id="contact">
+    <div class="container">
+        <div class="row">
+            <!-- <div class="col-md-6"><img src="/assets/images/claim.jpg" alt="about" width=25% height=25%/> </div> -->
+            <div class="col-md-12">
+                <div class="text-center">
+                    <h3>List of Insurances Taken by the user</h3>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <table class="table">
+                    <thead>
+                        <th style="text-align: center">PolicyNo</th>
+            <th style="text-align: center">Season</th>
+            <th style="text-align: center">Year</th>
+            <th style="text-align: center">Crop</th>
+            <th style="text-align: center">SumInsured</th>
+            <th style="text-align: center">Date Of Insurance</th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let f of listinsurance">
+                            <td>{{f.PolicyNo}}</td>
+                            <td>{{f.Season}}</td>
+                            <td>{{f.Year}}</td>
+                            <td>{{f.Crop}}</td>
+                            <td>₹ {{f.SumInsured}}</td>
+                            <td>{{f.DateOfInsurance|date:'shortDate'}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+<br>
+<br>
+            </div>
+            <br>
+
+
+            <div class="col-md-12">
+               <center> <h3>Insurance Claim Application</h3></center>
+                <form role="form" #Insclaim="ngForm" (ngSubmit)="claimRequest(Insclaim)">
+            
+                    <div class ="form-group">
+                        <label for="PolicyNo">Policy Number</label>
+                        <input type="number" #PolicyNo="ngModel" class="form-control" 
+                        [(ngModel)]=insclaim.PolicyNo id="PolicyNo" name="PolicyNo" required style="color:white">
+                        <div *ngIf="PolicyNo.value === null">
+                            <div style="color: red;">Policy Number required</div>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class ="form-group">
+                        <label for="CauseOfClaim">Cause Of Claim</label>
+                        <input type="text" #CauseOfClaim="ngModel" class="form-control" 
+                        [(ngModel)]=insclaim.CauseOfClaim id="CauseOfClaim" name="CauseOfClaim" required style="color:white">
+                        <div *ngIf="CauseOfClaim.invalid && (CauseOfClaim.dirty || CauseOfClaim.touched)">
+                            <div *ngIf="CauseOfClaim.errors.required " style="color: red;">
+                            Loss Cause required</div>
+                        </div> 
+                    </div>
+        
+                    <div class ="form-group">
+                        <label for="AmountClaimed">Claim Amount</label>
+                        <input type="number"  class="form-control" 
+                        [(ngModel)]=insclaim.AmountClaimed #AmountClaimed="ngModel" id="AmountClaimed" name="AmountClaimed" required style="color:white"> 
+                        <div *ngIf="AmountClaimed.value <= 1">
+                            <div style="color: red;">Amount should be greater than 0</div>
+                        </div> 
+                    </div>
+        
+                    <div>
+                        <label for ="DateOfLoss"> Incident Date</label> 
+                        <input type="date"  #DateOfLoss="ngModel" class ="form-control" 
+                        [(ngModel)]=insclaim.DateOfLoss id="DateOfLoss" name="DateOfLoss" required 
+                        max="2020-12-31" style="color:white">
+                    </div>
+                
+                    <br>
+                    <div>
+                        <label for ="DateOfClaim"> Claim Date</label> 
+                        <input type="date"  #DateOfClaim="ngModel" class ="form-control" 
+                        [(ngModel)]=insclaim.DateOfClaim id="DateOfClaim" name="DateOfClaim" required
+                        max="2020-12-31" style="color:white">        
+                    </div>
+                    <br>
+                <button type="submit" class="contact-button" style="background:green;" >Submit</button>
+                <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+                </form>
+            </div>
+            <br>
+        </div>
+    </div>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+</div></div>
+
+    <!-- <img src="/assets/images/claim.jpg" alt="about" width=25% height=25%/> -->
+
+<!-- <div class="wrk2" >
+<div class="form-1">
+    <div class ="container">
+           
+    </div>
+</div>
+
+<br> -->
+
+<!-- <div class ="w">
+<table border ="1" cellpadding="21" cellspacing="50" width="80%" >
+        <tr>
+            <th>PolicyNo</th>
+            <th>Season</th>
+            <th>Year</th>
+            <th>Crop</th>
+            <th>SumInsured</th>
+            <th>Date Of Insurance</th>
+        </tr>
+
+        <tr *ngFor="let f of listinsurance">
+            <td>{{f.PolicyNo}}</td>
+            <td>{{f.Season}}</td>
+            <td>{{f.Year}}</td>
+            <td>{{f.Crop}}</td>
+            <td>{{f.SumInsured}}</td>
+            <td>{{f.DateOfInsurance}}</td>
+        </tr>
+</table>
+<div>
+<br> -->

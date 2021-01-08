@@ -1,0 +1,117 @@
+<!-- Contact -->
+<div class="banner3" id="banner3">
+    <div class="bg-overlay2">
+<div class="contact" id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="text-center">
+                    <h3>Enquiry Messages</h3>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <table class="table">
+                    <thead>
+                        <th>Email Id</th>
+                        <th>Contact Name</th>
+                        <th>Request Type</th>
+                        <th>Message</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let m of msg">
+                            <td> {{m.Email}} </td>
+                            <td> {{m.ContactName}} </td>
+                            <td> {{m.RequestType}} </td>
+                            <td> {{m.message}} </td>
+                            <td> {{m.status}} </td>
+                            <td *ngIf="m.status=='Not Seen'"> <button class="btn btn-success" data-toggle="modal" data-target="#reply" (click)="Reply(m.Email,m.RequestType)">Reply</button> </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+    <div class="modal fade" id="reply" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="color: red">
+                    <center>
+                        <h2 class="modal-title" id="myModalLabel">Reply Here!</h2>
+                    </center>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+                </div>
+                <div class="modal-body">
+                    <div class="contact-form">
+                        <form role="form" #replyform="ngForm" (ngSubmit)="SendMail(replyform)">
+                            <div>
+                                <label for="From" style="color:black">Email From: &nbsp; &nbsp; </label><br>
+                                <input type="text" class="form-control" id="email" name="From" [(ngModel)]=reply.From #From="ngModel" required email>
+                            </div><br>
+                            <!-- Email validation -->
+                            <div *ngIf="!From?.valid && (From?.dirty || From?.touched)" class="error">
+                                <div *ngIf="From.errors.required">
+                                    <small class="text-danger">From Emailid Required!</small>
+                                </div>
+                                <div *ngIf="From.errors.email">
+                                    <small class="text-danger">Email should be correct format!</small>
+                                </div>
+                            </div><br>
+
+                            <div>
+                                <label for="To" style="color:black">Email To: &nbsp; &nbsp; </label><br>
+                                <input type="text" class="form-control" id="email" name="To" [(ngModel)]=reply.To #To="ngModel" required email>
+                            </div><br>
+                            <!-- Email validation -->
+                            <div *ngIf="!To?.valid && (To?.dirty || To?.touched)" class="error">
+                                <div *ngIf="To.errors.required">
+                                    <small class="text-danger">To Emailid Required!</small>
+                                </div>
+                                <div *ngIf="To.errors.email">
+                                    <small class="text-danger">Email should be correct format!</small>
+                                </div>
+                            </div><br>
+
+
+                            <div>
+                                <label for="Subject" style="color:black">Subject: &nbsp; &nbsp; </label><br>
+                                <input type="text" class="form-control" id="name" name="Subject" [(ngModel)]=reply.Subject #Subject="ngModel" required>
+                            </div><br>
+                            <!-- Email validation -->
+                            <div *ngIf="!Subject?.valid && (Subject?.dirty || Subject?.touched)" class="error">
+                                <div *ngIf="Subject.errors.required">
+                                    <small class="text-danger">Subject Required!</small>
+                                </div>
+                            </div><br>
+
+
+                            <div>
+                                <label for="Body" style="color:black">Enter Message: &nbsp; &nbsp; </label><br>
+                                <textarea class="form-control " placeholder="Message" rows="4" name="Body" [(ngModel)]=reply.Body #Body="ngModel" required></textarea>
+                            </div>
+                            <!-- Message validation -->
+                            <div *ngIf="!Body?.valid && (Body?.dirty || Body?.touched)" class="error">
+                                <div *ngIf="Body.errors?.required">
+                                    <small class="text-danger">Message Required!</small>
+                                </div>
+                            </div><br>
+
+                            <div class="col-md-12 text-center ">
+                                <button type="submit " class="contact-button" [disabled]=!replyform.valid>Send Message</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
+</div>

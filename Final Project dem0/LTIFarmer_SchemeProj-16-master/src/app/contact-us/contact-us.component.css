@@ -1,0 +1,20 @@
+.contact {
+    background-color: rgba(204, 204, 204, 0.15);
+    padding: 50px 0px;
+    float: left;
+    width: 100%;
+}
+
+.contact h3 {
+    margin-top: 0px;
+    margin-bottom: 50px;
+    border-bottom: 2px solid #EB233C;
+    display: inline-block;
+    line-height: 35px;
+}
+
+.contact-form {
+    margin-top: 25px;
+    margin-right: 0;
+    margin-left: auto;
+}

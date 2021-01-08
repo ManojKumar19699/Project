@@ -1,0 +1,39 @@
+<!-- Contact -->
+<div class="banner" id="banner">
+    <div class="bg-overlay2">
+<div class="contact" id="contact">
+    <div class="container">
+        <div>
+            <div>
+                <div class="text-center">
+                    <h3>Sale History</h3>
+                </div>
+            </div>
+            <div>
+                <table class="table">
+                    <thead>
+                        <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                        <th style="text-align: center">  Date of Sale</th>
+                        <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Crop Name</th>
+                        <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Quantity</th>
+                        <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Minimum Sale Price</th>
+                        <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Final Price</th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let s of sale">
+                            <td>{{s.SaleDate| date:'shortDate'}}</td>
+                            <td>{{s.CropName}}</td>
+                            <td>{{s.Quantity}} Quintals</td>
+                            <td>₹ {{s.MinSalePrice}}</td>
+                            <td>₹ {{s.SoldPrice}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
+</div>

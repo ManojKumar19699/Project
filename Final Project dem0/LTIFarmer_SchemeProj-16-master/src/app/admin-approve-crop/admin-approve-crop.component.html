@@ -1,0 +1,42 @@
+<div class="banner3" id="banner3">
+    <div class="bg-overlay2">
+
+<div class="contact" id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="text-center">
+                    <h3>Approve Crop Sell</h3>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <table class="table">
+                    <thead>
+                        <th>Request Id</th>
+                        <th>Farmer Id</th>
+                        <th>Crop Type</th>
+                        <th>Crop Name</th>
+                        <th>Fertilizer Type</th>
+                        <th>Quantity</th>
+                        <th>Action</th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let c of unapprovedcrops">
+                            <td>{{c.RequestId}}</td>
+                            <td>{{c.FarmerId}}</td>
+                            <td>{{c.CropType}}</td>
+                            <td>{{c.CropName}}</td>
+                            <td>{{c.FertilizerType}}</td>
+                            <td>{{c.Quantity}}</td>
+                            <td><button type="button" class="contact-button" style="background:green;" (click)="approveCrop(c.RequestId)">Approve Crop</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
+</div>

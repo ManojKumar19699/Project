@@ -1,0 +1,82 @@
+<!-- Contact -->
+<div class="contact" id="contact" style="background-color:#FFF8DC">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="text-center">
+                    <br>
+                    <h2>Contact Us</h2>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="contact-form">
+                    <form role="form" #contactus="ngForm" (ngSubmit)="Oncontact(contactus)">
+                        <div>
+                            <label for="ContactName">Enter Contact Name: &nbsp; &nbsp; </label><br>
+                            <input type="text" class="form-control" id="name" name="ContactName" [(ngModel)]=contact.ContactName #ContactName="ngModel" placeholder="Contact Name" required>
+                        </div><br>
+                        <!-- contact name validation -->
+                        <div *ngIf="!ContactName?.valid && (ContactName?.dirty || ContactName?.touched)" class="error">
+                            <div *ngIf="ContactName.errors?.required">
+                                <small class="text-danger">Customer Name Required!</small>
+                            </div>
+                        </div><br>
+
+                        <div>
+                            <label for="Email">Enter Email-id: &nbsp; &nbsp; </label><br>
+                            <input type="text" class="form-control" id="email" name="Email" [(ngModel)]=contact.Email #Email="ngModel" placeholder="Email Id" required email>
+                        </div><br>
+                        <!-- Email validation -->
+                        <div *ngIf="!Email?.valid && (Email?.dirty || Email?.touched)" class="error">
+                            <div *ngIf="Email.errors.required">
+                                <small class="text-danger">Customer Emailid Required!</small>
+                            </div>
+                            <div *ngIf="Email.errors.email">
+                                <small class="text-danger">Email should be correct format!</small>
+                            </div>
+                        </div><br>
+
+
+                        <div>
+                            <label for="RequestType">Type of Request: &nbsp; &nbsp; </label><br>
+                            <select name="RequestType" id="request" [(ngModel)]=contact.RequestType #RequestType="ngModel" required>
+                              <option selected>Choose Request</option>
+                              <option *ngFor="let r of request ">{{r}}</option>
+                          </select>
+                        </div><br>
+                        <!-- request type validation -->
+                        <div *ngIf="!RequestType?.valid && (RequestType?.dirty || RequestType?.touched)" class="error">
+                            <div *ngIf="RequestType.errors?.required">
+                                <small class="text-danger">Request Type Required!</small>
+                            </div>
+                        </div><br>
+
+
+                        <div>
+                            <label for="Message">Enter Message: &nbsp; &nbsp; </label><br>
+                            <textarea class="form-control " placeholder="Message" rows="4" name="Message" [(ngModel)]=contact.Message #Message="ngModel" required></textarea>
+                        </div>
+                        <!-- Message validation -->
+                        <div *ngIf="!Message?.valid && (Message?.dirty || Message?.touched)" class="error">
+                            <div *ngIf="Message.errors?.required">
+                                <small class="text-danger">Message Required!</small>
+                            </div>
+                        </div><br>
+
+                        <div class="col-md-12 text-center ">
+                            <button type="submit " class="contact-button" [disabled]=!contactus.valid>Send Message</button>
+                        </div>
+                    </form>
+
+                </div>
+
+            </div>
+            <div class="col-md-6">
+                <br><br><br><br>
+                <img src="assets/images/contactus.jpg" alt="about" width="90%" height="90%" />
+            </div>
+        </div>
+        
+    </div>
+
+</div>

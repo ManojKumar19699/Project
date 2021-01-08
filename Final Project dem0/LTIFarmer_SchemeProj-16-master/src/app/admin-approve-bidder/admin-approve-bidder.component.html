@@ -1,0 +1,52 @@
+<div class="banner3" id="banner3">
+    <div class="bg-overlay2">
+
+<div class="contact" id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="text-center">
+                    <h3>Approve Bidder</h3>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <table class="table">
+                    <thead>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>ContactNo</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>City</th>
+                        <th>State</th>
+                        <th>Pincocde</th>
+                        <th>Aadhar</th>
+                        <th>Certificate</th>
+                        <th>Action</th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let b of unapprovedbidders">
+                            <td>{{b.BidderId}}</td>
+                            <td>{{b.BidderName}}</td>
+                            <td>{{b.BidderContactNo}}</td>
+                            <td>{{b.BidderEmail}}</td>
+                            <td>{{b.BidderAddress}}</td>
+                            <td>{{b.BidderCity}}</td>
+                            <td>{{b.BidderState}}</td>
+                            <td>{{b.BidderPincocde}}</td>
+                            <td><img src="http://localhost:64756/Image/{{b.BidderAadhar}}" width="150" height="150" alt="{{b.BidderAadhar}}"/></td>
+                            <td><img src="http://localhost:64756/Image/{{b.BidderAadhar}}" width="150" height="150" alt="{{b.BidderAadhar}}"/>{{b.FarmerCertificate}}</td>
+                            <td><button type="button" class="contact-button" style="background:green;" (click)="approveBidder(b.BidderId)">Approve Bidder</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+</div>
+</div>

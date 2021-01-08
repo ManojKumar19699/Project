@@ -1,0 +1,329 @@
+<br><br>
+<div id="myme" style="background-image: url('../assets/images/Agriculture.jpg');background-color: RGBA(15, 5, 20, 0.84);background-attachment: fixed;
+ background-repeat: no-repeat; background-size: cover;">
+    <div class="bg-overlay1">
+        <div class="container" style="border: 3px solid black; width: 100%; height:75%;">
+            <br>
+            <br>
+            <br>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="banner-text">
+                        <br><br>
+                        <h2 style="color: #EB233C" >What you can do with AgriFarm</h2>
+                        <br><br>
+                        <ul style="color: white;padding-left: 30px;">&nbsp;&nbsp;
+                            <li style="font-size: 30px;">
+                                <h3 > Enroll Yourself on the AgroService to sell crops!</h3>
+                                    
+                            </li>
+                            <li style="font-size: 30px; ">
+                                <h3 > Register Yourself with all given credentials
+                                    as part
+                                    of the registration process.</h3>
+                            </li>
+                            <li style="font-size: 30px; " >
+                                <h3 > After Logging in, You are allowed to sell your desired Crops
+                                </h3>
+                            </li>
+                            <li style="font-size: 30px; ">
+                                <h3 > After Logging in, You will be able to see all the bidders who
+                                    are bidding on your crop.
+                                </h3>
+                            </li>
+                            <li style="font-size: 30px; ">
+                                <h3>After Logging in, You can avail insurance once.
+                                </h3>
+                            </li>
+
+                            <li style="font-size: 30px; ">
+                                <h3> Sell it! To get high returns!</h3>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                </div>
+                <div class="banner-text">
+                    <br><br>
+                    <h1 style="color: #EB233C">Farmer Registration Form</h1>
+                    <div class="col-lg-6">
+                        <h2 style="text-align: center;">Personal Details</h2><br>
+                        <!-- Call Me Form -->
+                        <form #myForm="ngForm" (ngSubmit)="OnSubmit(FarmerName,FarmerEmail,FarmerContactNo,FarmerAddress, FarmerCity
+            ,FarmerState,FarmerPincocde, FarmerAadhar,FarmerCertificate,FarmerPassword,
+            FarmerLandArea,FarmerLandAddress,FarmerLandPincode,AccountNo,IFSC_Code);  myForm.reset() ">
+                            <div class="form-group">
+                                <label for="FarmerName">Full Name</label>
+                                <input  #FarmerName="ngModel" type="text" class="form-control"
+                                    [(ngModel)]=farmerdetails.FarmerName id="FarmerName" name="FarmerName" required>
+
+                                <div *ngIf="FarmerName.invalid && (FarmerName.dirty|| FarmerName.touched)">
+                                    <div *ngIf="FarmerName.errors.required" style="color:red;"
+                                        class="help-block with-errors">Name is required!</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="FarmerEmail">Email ID</label>
+                                <input #FarmerEmail="ngModel" type="FarmerEmail" class="form-control"
+                                    [(ngModel)]=farmerdetails.FarmerEmail id="FarmerEmail" name="FarmerEmail" required>
+
+                                <div *ngIf="FarmerEmail.invalid && (FarmerEmail.dirty|| FarmerEmail.touched)">
+                                    <div *ngIf="FarmerEmail.errors.required" style="color: red;"
+                                        class="help-block with-errors">Email Id is required!</div>
+
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="FarmerContactNo">Contact Number</label>
+                                <input #FarmerContactNo="ngModel" type="tel" class="form-control"
+                                    [(ngModel)]=farmerdetails.FarmerContactNo id="FarmerContactNo"
+                                    name="FarmerContactNo" pattern="\d{10}" required>
+
+                                <div
+                                    *ngIf="FarmerContactNo.invalid && (FarmerContactNo.dirty|| FarmerContactNo.touched)">
+                                    <div *ngIf="FarmerContactNo.errors.required" style="color: red;"
+                                        class="help-block with-errors">Contact No is required!</div>
+                                    <div *ngIf="FarmerContactNo.errors.pattern" style="color: red;"
+                                        class="help-block with-errors">Please Enter valid Contact Number</div>
+                                </div>
+                            </div>
+
+
+                            <h2 style="text-align: center;">Address Details</h2><br>
+                            <!--<div class="col-lg-6">-->
+
+                            <!-- Call Me Form -->
+
+                            <div class="form-group">
+                                <label for="FarmerAddress">Address </label>
+                                <input #FarmerAddress="ngModel" type="text" class="form-control"
+                                    [(ngModel)]=farmerdetails.FarmerAddress id="FarmerAddress" name="FarmerAddress"
+                                    required>
+
+                                <div *ngIf="FarmerAddress.invalid && (FarmerAddress.dirty||FarmerAddress.touched)">
+                                    <div *ngIf="FarmerAddress.errors.required" style="color: red;"
+                                        class="help-block with-errors">Address is required!</div>
+                                    <div class="help-block with-errors"></div>
+
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="FarmerCity">Enter City</label>
+                                <input #FarmerCity="ngModel" type="text" class="form-control" id="FarmerCity"
+                                    [(ngModel)]=farmerdetails.FarmerCity name="FarmerCity" required>
+
+                                <div *ngIf="FarmerCity.invalid && (FarmerCity.dirty||FarmerCity.touched)">
+                                    <div *ngIf="FarmerCity.errors.required" style="color: red;"
+                                        class="help-block with-errors">
+                                        City is required!</div>
+
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="FarmerState">Enter State</label>
+                                <input #FarmerState="ngModel" type="text" class="form-control" id="FarmerState"
+                                    [(ngModel)]=farmerdetails.FarmerState name="FarmerState" required>
+
+                                <div *ngIf="FarmerState.invalid && (FarmerState.dirty||FarmerState.touched)">
+                                    <div *ngIf="FarmerState.errors.required" style="color: red;"
+                                        class="help-block with-errors">
+                                        State is required!</div>
+
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="FarmerPincocde">Enter PinCode</label>
+                                <input #FarmerPincocde="ngModel" type="text" class="form-control"
+                                    [(ngModel)]=farmerdetails.FarmerPincocde id="FarmerPincocde" name="FarmerPincocde"
+                                    pattern="\d{6}" required>
+
+                                <div *ngIf="FarmerPincocde.invalid && (FarmerPincocde.dirty||FarmerPincocde.touched)">
+                                    <div *ngIf="FarmerPincocde.errors.required" style="color: red;"
+                                        class="help-block with-errors">
+                                        Pincode is required!</div>
+                                    <div *ngIf="FarmerPincocde.errors.pattern" style="color: red;"
+                                        class="help-block with-errors">
+                                        Please Enter valid Pincode</div>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+
+                            <div class="form-message">
+                                <div id="lmsgSubmit" class="h3 text-center hidden"></div>
+                            </div>
+
+
+
+                            <h2 style="text-align: center;" >Documents Upload</h2><br>
+
+                            <div class="form-group">
+                                <label for="FarmerAadhar">Upload AADHAR Card</label>
+                                <input #FarmerAadhar="ngModel" (change)="handleFileInput($event.target.files)"
+                                    [(ngModel)]=farmerdetails.FarmerAadhar class="form-control" type="file"
+                                    id="FarmerAadhar" name="FarmerAadhar">
+
+                                <div class="help-block with-errors"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="FarmerCertificate">Upload Certificate</label>
+                                <input #FarmerCertificate="ngModel" (change)="handleFileInput1($event.target.files)"
+                                    [(ngModel)]=farmerdetails.FarmerCertificate class="form-control" type="file"
+                                    id="FarmerCertificate" name="FarmerCertificate">
+
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            <br />
+
+                            <br />
+                            <div class="form-group">
+                                <label for="FarmerPassword">Password</label>
+                                <input #FarmerPassword="ngModel" type="password"
+                                    [(ngModel)]=farmerdetails.FarmerPassword class="form-control"
+                                    name="FarmerPassword" id="FarmerPassword" minlength="8" required>
+
+                                <div *ngIf="FarmerPassword.invalid && (FarmerPassword.dirty||FarmerPassword.touched)">
+                                    <div *ngIf="FarmerPassword.errors.required" style="color:red;"
+                                        class="help-block with-errors">Password is required!</div>
+                                    <div *ngIf="FarmerPassword.errors?.minlength" style="color:red;">
+                                        Password must be at least 8 characters long.
+                                    </div>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="FarmerConfirmPassword">Confirm Password</label>
+                                <input #FarmerConfirmPassword="ngModel" type="password" ngValidateEqual="FarmerPassword"
+                                    [(ngModel)]=farmerdetails.FarmerConfirmPassword class="form-control"
+                                    name="FarmerConfirmPassword" id="FarmerConfirmPassword" required>
+
+                                <div *ngIf="(FarmerConfirmPassword.dirty || FarmerConfirmPassword.touched) && FarmerConfirmPassword.invalid"
+                                    style="color:red;">
+                                    <p class="warning-text"
+                                        *ngIf="FarmerConfirmPassword.hasError('notEqual') && FarmerPassword.valid">
+                                        Passwords Don't Match
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- <button type="submit" class="form-control-submit-button">SUBMIT PERSONAL DETAILS</button> -->
+
+                            <!---------------Land---------------->
+
+                            <!--<form #landdetails="ngForm" (ngSubmit)="OnLandDetails(landdetails)" >-->
+
+                            <h2 style="text-align: center;">Land Details</h2><br>
+                            <div class="form-group">
+                                <label for="FarmerLandArea">Enter Land Area ( in Hectares)</label>
+                                <input #FarmerLandArea="ngModel" type="text" [(ngModel)]=farmerdetails.FarmerLandArea
+                                    id="FarmerLandArea" name="FarmerLandArea" class="form-control" required>
+
+                                <div *ngIf="FarmerLandArea.invalid && (FarmerLandArea.dirty||FarmerLandArea.touched)">
+                                    <div *ngIf="FarmerLandArea.errors.required" style="color: red;"
+                                        class="help-block with-errors">
+                                        Land Area Detail is required!</div>
+
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="FarmerLandAddress">Enter Land Address</label>
+                                <input #FarmerLandAddress="ngModel" type="text"
+                                    [(ngModel)]=farmerdetails.FarmerLandAddress id="FarmerLandAddress"
+                                    name="FarmerLandAddress" class="form-control" required>
+
+                                <div
+                                    *ngIf="FarmerLandAddress.invalid && (FarmerLandAddress.dirty||FarmerLandAddress.touched)">
+                                    <div *ngIf="FarmerLandAddress.errors.required" style="color: red;"
+                                        class="help-block with-errors">Land FarmerAddress is required!</div>
+
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="FarmerLandPincode">Enter PinCode</label>
+                                <input #FarmerLandPincode="ngModel" type="text"
+                                    [(ngModel)]=farmerdetails.FarmerLandPincode id="FarmerLandPincode"
+                                    name="FarmerLandPincode" class="form-control" pattern="\d{6}" required>
+                                <div
+                                    *ngIf="FarmerLandPincode.invalid && (FarmerLandPincode.dirty||FarmerLandPincode.touched)">
+                                    <div *ngIf="FarmerLandPincode.errors.required" style="color: red;"
+                                        class="help-block with-errors">Pincode is required!</div>
+                                    <div *ngIf="FarmerLandPincode.errors.pattern" style="color: red;"
+                                        class="help-block with-errors">Please Enter valid Pincode</div>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+
+
+                            <h2 style="text-align: center;">Bank Details</h2><br>
+
+                            <div class="form-group">
+                                <label for="AccountNo">Account Number</label>
+                                <input #AccountNo="ngModel" type="text" class="form-control"
+                                    [(ngModel)]=farmerdetails.AccountNo id="AccountNo" name="AccountNo" required>
+
+                                <div *ngIf="AccountNo.invalid && (AccountNo.dirty||AccountNo.touched)">
+                                    <div *ngIf="AccountNo.errors.required" style="color: red;"
+                                        class="help-block with-errors">Account Number is required!</div>
+                                    <div *ngIf="FarmerLandPincode.errors.pattern" style="color: red;"
+                                        class="help-block with-errors">Please Enter valid Pincode</div>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="IFSC_Code">IFSC Code</label>
+                                <input #IFSC_Code="ngModel" type="text" class="form-control"
+                                    [(ngModel)]=farmerdetails.IFSC_Code id="IFSC_Code" name="IFSC_Code" required>
+
+                                <div *ngIf="IFSC_Code.invalid && (IFSC_Code.dirty||IFSC_Code.touched)">
+                                    <div *ngIf="IFSC_Code.errors.required" style="color: red;"
+                                        class="help-block with-errors">IFSC Code is required!</div>
+                                    <div *ngIf="IFSC_Code.errors.pattern" style="color: red;"
+                                        class="help-block with-errors">Please Enter valid IFSC Code</div>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+
+
+                            <div class="form1">
+                               <center><button type="reset" class="contact-button">Reset</button>
+                                <!-- </div>
+                                
+                                <div class="form1"> -->
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <button type="submit" class="contact-button" style="background:green;">Submit</button></center> 
+                             </div>
+
+
+                            <!-- <button type="submit" class="btn btn-success">REGISTER</button>
+                            <div class="form-group">
+                                <input type="reset" class="btn btn-danger" value="RESET">
+                            </div> -->
+                        </form>
+                        <br>
+                        <br>
+                        <br>
+
+                    </div>
+                </div>
+
+            </div> <!-- end of col -->
+        </div>
+    </div>
+</div>

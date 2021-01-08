@@ -1,0 +1,15 @@
+.banner-text h4,label, h3{
+    font-size: 18px;
+    color: white;
+}
+
+.banner-text h2, h1 {
+    font-size: 27px;
+    color: white;
+}
+
+.banner-text input,i{
+    font-size: 18px;
+    color: white;
+}
+

@@ -1,0 +1,453 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbProjectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tblAdmin">
+    <Key>
+      <PropertyRef Name="AdminId" />
+    </Key>
+    <Property Name="AdminId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AdminName" Type="varchar" MaxLength="30" />
+    <Property Name="AdminContact" Type="nvarchar" MaxLength="30" />
+    <Property Name="AdminEmail" Type="varchar" MaxLength="30" />
+    <Property Name="AdminPass" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="tblBank">
+    <Key>
+      <PropertyRef Name="AccountNo" />
+    </Key>
+    <Property Name="AccountNo" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="FarmerId" Type="int" />
+    <Property Name="BidderId" Type="int" />
+    <Property Name="IFSC_Code" Type="nvarchar" MaxLength="15" />
+  </EntityType>
+  <EntityType Name="tblBidder">
+    <Key>
+      <PropertyRef Name="BidderId" />
+    </Key>
+    <Property Name="BidderId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BidderName" Type="varchar" MaxLength="30" />
+    <Property Name="BidderContactNo" Type="nvarchar" MaxLength="10" />
+    <Property Name="BidderEmail" Type="varchar" MaxLength="30" />
+    <Property Name="BidderAddress" Type="varchar" MaxLength="50" />
+    <Property Name="BidderCity" Type="varchar" MaxLength="30" />
+    <Property Name="BidderState" Type="varchar" MaxLength="20" />
+    <Property Name="BidderPincocde" Type="nvarchar" MaxLength="6" />
+    <Property Name="BidderAadhar" Type="varchar(max)" />
+    <Property Name="BidderPAN" Type="varchar(max)" />
+    <Property Name="BidderTradeLicense" Type="varchar(max)" />
+    <Property Name="BidderPassword" Type="nvarchar" MaxLength="20" />
+    <Property Name="BidderApproved" Type="bit" />
+    <Property Name="ApprovalAdminId" Type="int" />
+  </EntityType>
+  <EntityType Name="tblBidding">
+    <Key>
+      <PropertyRef Name="BiddingId" />
+    </Key>
+    <Property Name="BiddingId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RequestId" Type="int" />
+    <Property Name="BidderId" Type="int" />
+    <Property Name="InitialPrice" Type="int" />
+    <Property Name="CurrentBidPrice" Type="int" />
+    <Property Name="PreviousBidPrice" Type="int" />
+    <Property Name="BidCloseTime" Type="datetime" />
+    <Property Name="ApprovalAdminId" Type="int" />
+  </EntityType>
+  <EntityType Name="tblContactUs">
+    <Key>
+      <PropertyRef Name="RequestToken" />
+    </Key>
+    <Property Name="RequestToken" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="20" />
+    <Property Name="ContactName" Type="varchar" MaxLength="20" />
+    <Property Name="RequestType" Type="varchar" MaxLength="15" />
+    <Property Name="message" Type="varchar" MaxLength="20" />
+    <Property Name="status" Type="varchar" MaxLength="15" />
+    <Property Name="ApprovalAdminId" Type="int" />
+  </EntityType>
+  <EntityType Name="tblCropRequest">
+    <Key>
+      <PropertyRef Name="RequestId" />
+    </Key>
+    <Property Name="RequestId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FarmerId" Type="int" />
+    <Property Name="CropType" Type="varchar" MaxLength="20" />
+    <Property Name="CropName" Type="varchar" MaxLength="20" />
+    <Property Name="FertilizerType" Type="varchar" MaxLength="20" />
+    <Property Name="Quantity" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="SoilPhCertificate" Type="varchar(max)" />
+    <Property Name="CropApproved" Type="bit" />
+    <Property Name="ApprovalAdminId" Type="int" />
+  </EntityType>
+  <EntityType Name="tblFarmer">
+    <Key>
+      <PropertyRef Name="FarmerId" />
+    </Key>
+    <Property Name="FarmerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FarmerName" Type="varchar" MaxLength="30" />
+    <Property Name="FarmerContactNo" Type="nvarchar" MaxLength="10" />
+    <Property Name="FarmerEmail" Type="varchar" MaxLength="30" />
+    <Property Name="FarmerAddress" Type="varchar" MaxLength="50" />
+    <Property Name="FarmerCity" Type="varchar" MaxLength="30" />
+    <Property Name="FarmerState" Type="varchar" MaxLength="20" />
+    <Property Name="FarmerPincocde" Type="nvarchar" MaxLength="6" />
+    <Property Name="FarmerAadhar" Type="varchar(max)" />
+    <Property Name="FarmerPAN" Type="varchar(max)" />
+    <Property Name="FarmerCertificate" Type="varchar(max)" />
+    <Property Name="FarmerPassword" Type="nvarchar" MaxLength="20" />
+    <Property Name="FarmerApproved" Type="bit" />
+    <Property Name="ApprovalAdminId" Type="int" />
+  </EntityType>
+  <EntityType Name="tblFarmLand">
+    <Key>
+      <PropertyRef Name="FarmerLandId" />
+    </Key>
+    <Property Name="FarmerLandId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FarmerId" Type="int" />
+    <Property Name="FarmerLandArea" Type="varchar" MaxLength="10" />
+    <Property Name="FarmerLandAddress" Type="varchar" MaxLength="30" />
+    <Property Name="FarmerLandPincode" Type="nvarchar" MaxLength="6" />
+  </EntityType>
+  <EntityType Name="tblInsurance">
+    <Key>
+      <PropertyRef Name="PolicyNo" />
+    </Key>
+    <Property Name="PolicyNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FarmerId" Type="int" />
+    <Property Name="CompanyName" Type="varchar" MaxLength="30" />
+    <Property Name="Season" Type="varchar" MaxLength="10" />
+    <Property Name="Year" Type="nvarchar" MaxLength="4" />
+    <Property Name="Crop" Type="varchar" MaxLength="20" />
+    <Property Name="SumInsured" Type="int" />
+    <Property Name="DateOfInsurance" Type="datetime" />
+    <Property Name="Area" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="ApprovalAdminId" Type="int" />
+  </EntityType>
+  <EntityType Name="tblInsuranceClaim">
+    <Key>
+      <PropertyRef Name="CliamId" />
+    </Key>
+    <Property Name="CliamId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PolicyNo" Type="int" />
+    <Property Name="CauseOfClaim" Type="varchar" MaxLength="50" />
+    <Property Name="DateOfLoss" Type="datetime" />
+    <Property Name="DateOfClaim" Type="datetime" />
+    <Property Name="AmountClaimed" Type="int" />
+    <Property Name="ApprovalStatus" Type="varchar" MaxLength="20" />
+    <Property Name="ApprovalAdminId" Type="int" />
+  </EntityType>
+  <EntityType Name="tblSales">
+    <Key>
+      <PropertyRef Name="SalesId" />
+    </Key>
+    <Property Name="SalesId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FarmerId" Type="int" />
+    <Property Name="BidderId" Type="int" />
+    <Property Name="CropName" Type="varchar" MaxLength="20" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="MinSalePrice" Type="int" />
+    <Property Name="TotalPrice" Type="int" />
+    <Property Name="SoldPrice" Type="int" />
+    <Property Name="SaleDate" Type="datetime" />
+    <Property Name="ApprovalAdminId" Type="int" />
+  </EntityType>
+  <Association Name="FK__tblBank__BidderI__1ED998B2">
+    <End Role="tblBidder" Type="Self.tblBidder" Multiplicity="0..1" />
+    <End Role="tblBank" Type="Self.tblBank" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblBidder">
+        <PropertyRef Name="BidderId" />
+      </Principal>
+      <Dependent Role="tblBank">
+        <PropertyRef Name="BidderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblBank__FarmerI__1DE57479">
+    <End Role="tblFarmer" Type="Self.tblFarmer" Multiplicity="0..1" />
+    <End Role="tblBank" Type="Self.tblBank" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblFarmer">
+        <PropertyRef Name="FarmerId" />
+      </Principal>
+      <Dependent Role="tblBank">
+        <PropertyRef Name="FarmerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblBidder__Appro__182C9B23">
+    <End Role="tblAdmin" Type="Self.tblAdmin" Multiplicity="0..1" />
+    <End Role="tblBidder" Type="Self.tblBidder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblAdmin">
+        <PropertyRef Name="AdminId" />
+      </Principal>
+      <Dependent Role="tblBidder">
+        <PropertyRef Name="ApprovalAdminId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblBiddin__Appro__2C3393D0">
+    <End Role="tblAdmin" Type="Self.tblAdmin" Multiplicity="0..1" />
+    <End Role="tblBidding" Type="Self.tblBidding" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblAdmin">
+        <PropertyRef Name="AdminId" />
+      </Principal>
+      <Dependent Role="tblBidding">
+        <PropertyRef Name="ApprovalAdminId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblBiddin__Bidde__2B3F6F97">
+    <End Role="tblBidder" Type="Self.tblBidder" Multiplicity="0..1" />
+    <End Role="tblBidding" Type="Self.tblBidding" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblBidder">
+        <PropertyRef Name="BidderId" />
+      </Principal>
+      <Dependent Role="tblBidding">
+        <PropertyRef Name="BidderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblBiddin__Reque__2A4B4B5E">
+    <End Role="tblCropRequest" Type="Self.tblCropRequest" Multiplicity="0..1" />
+    <End Role="tblBidding" Type="Self.tblBidding" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCropRequest">
+        <PropertyRef Name="RequestId" />
+      </Principal>
+      <Dependent Role="tblBidding">
+        <PropertyRef Name="RequestId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblContac__Appro__2F10007B">
+    <End Role="tblAdmin" Type="Self.tblAdmin" Multiplicity="0..1" />
+    <End Role="tblContactUs" Type="Self.tblContactUs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblAdmin">
+        <PropertyRef Name="AdminId" />
+      </Principal>
+      <Dependent Role="tblContactUs">
+        <PropertyRef Name="ApprovalAdminId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblCropRe__Appro__276EDEB3">
+    <End Role="tblAdmin" Type="Self.tblAdmin" Multiplicity="0..1" />
+    <End Role="tblCropRequest" Type="Self.tblCropRequest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblAdmin">
+        <PropertyRef Name="AdminId" />
+      </Principal>
+      <Dependent Role="tblCropRequest">
+        <PropertyRef Name="ApprovalAdminId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblCropRe__Farme__267ABA7A">
+    <End Role="tblFarmer" Type="Self.tblFarmer" Multiplicity="0..1" />
+    <End Role="tblCropRequest" Type="Self.tblCropRequest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblFarmer">
+        <PropertyRef Name="FarmerId" />
+      </Principal>
+      <Dependent Role="tblCropRequest">
+        <PropertyRef Name="FarmerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblFarmer__Appro__145C0A3F">
+    <End Role="tblAdmin" Type="Self.tblAdmin" Multiplicity="0..1" />
+    <End Role="tblFarmer" Type="Self.tblFarmer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblAdmin">
+        <PropertyRef Name="AdminId" />
+      </Principal>
+      <Dependent Role="tblFarmer">
+        <PropertyRef Name="ApprovalAdminId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblFarmLa__Farme__1B0907CE">
+    <End Role="tblFarmer" Type="Self.tblFarmer" Multiplicity="0..1" />
+    <End Role="tblFarmLand" Type="Self.tblFarmLand" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblFarmer">
+        <PropertyRef Name="FarmerId" />
+      </Principal>
+      <Dependent Role="tblFarmLand">
+        <PropertyRef Name="FarmerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblInsura__Appro__32E0915F">
+    <End Role="tblAdmin" Type="Self.tblAdmin" Multiplicity="0..1" />
+    <End Role="tblInsurance" Type="Self.tblInsurance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblAdmin">
+        <PropertyRef Name="AdminId" />
+      </Principal>
+      <Dependent Role="tblInsurance">
+        <PropertyRef Name="ApprovalAdminId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblInsura__Appro__36B12243">
+    <End Role="tblAdmin" Type="Self.tblAdmin" Multiplicity="0..1" />
+    <End Role="tblInsuranceClaim" Type="Self.tblInsuranceClaim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblAdmin">
+        <PropertyRef Name="AdminId" />
+      </Principal>
+      <Dependent Role="tblInsuranceClaim">
+        <PropertyRef Name="ApprovalAdminId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblInsura__Farme__31EC6D26">
+    <End Role="tblFarmer" Type="Self.tblFarmer" Multiplicity="0..1" />
+    <End Role="tblInsurance" Type="Self.tblInsurance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblFarmer">
+        <PropertyRef Name="FarmerId" />
+      </Principal>
+      <Dependent Role="tblInsurance">
+        <PropertyRef Name="FarmerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblInsura__Polic__35BCFE0A">
+    <End Role="tblInsurance" Type="Self.tblInsurance" Multiplicity="0..1" />
+    <End Role="tblInsuranceClaim" Type="Self.tblInsuranceClaim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblInsurance">
+        <PropertyRef Name="PolicyNo" />
+      </Principal>
+      <Dependent Role="tblInsuranceClaim">
+        <PropertyRef Name="PolicyNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblSales__Approv__239E4DCF">
+    <End Role="tblAdmin" Type="Self.tblAdmin" Multiplicity="0..1" />
+    <End Role="tblSales" Type="Self.tblSales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblAdmin">
+        <PropertyRef Name="AdminId" />
+      </Principal>
+      <Dependent Role="tblSales">
+        <PropertyRef Name="ApprovalAdminId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblSales__Bidder__22AA2996">
+    <End Role="tblBidder" Type="Self.tblBidder" Multiplicity="0..1" />
+    <End Role="tblSales" Type="Self.tblSales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblBidder">
+        <PropertyRef Name="BidderId" />
+      </Principal>
+      <Dependent Role="tblSales">
+        <PropertyRef Name="BidderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblSales__Farmer__21B6055D">
+    <End Role="tblFarmer" Type="Self.tblFarmer" Multiplicity="0..1" />
+    <End Role="tblSales" Type="Self.tblSales" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblFarmer">
+        <PropertyRef Name="FarmerId" />
+      </Principal>
+      <Dependent Role="tblSales">
+        <PropertyRef Name="FarmerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="dbProjectModelStoreContainer">
+    <EntitySet Name="tblAdmin" EntityType="Self.tblAdmin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBank" EntityType="Self.tblBank" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBidder" EntityType="Self.tblBidder" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblBidding" EntityType="Self.tblBidding" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblContactUs" EntityType="Self.tblContactUs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblCropRequest" EntityType="Self.tblCropRequest" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblFarmer" EntityType="Self.tblFarmer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblFarmLand" EntityType="Self.tblFarmLand" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblInsurance" EntityType="Self.tblInsurance" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblInsuranceClaim" EntityType="Self.tblInsuranceClaim" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblSales" EntityType="Self.tblSales" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__tblBank__BidderI__1ED998B2" Association="Self.FK__tblBank__BidderI__1ED998B2">
+      <End Role="tblBidder" EntitySet="tblBidder" />
+      <End Role="tblBank" EntitySet="tblBank" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblBank__FarmerI__1DE57479" Association="Self.FK__tblBank__FarmerI__1DE57479">
+      <End Role="tblFarmer" EntitySet="tblFarmer" />
+      <End Role="tblBank" EntitySet="tblBank" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblBidder__Appro__182C9B23" Association="Self.FK__tblBidder__Appro__182C9B23">
+      <End Role="tblAdmin" EntitySet="tblAdmin" />
+      <End Role="tblBidder" EntitySet="tblBidder" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblBiddin__Appro__2C3393D0" Association="Self.FK__tblBiddin__Appro__2C3393D0">
+      <End Role="tblAdmin" EntitySet="tblAdmin" />
+      <End Role="tblBidding" EntitySet="tblBidding" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblBiddin__Bidde__2B3F6F97" Association="Self.FK__tblBiddin__Bidde__2B3F6F97">
+      <End Role="tblBidder" EntitySet="tblBidder" />
+      <End Role="tblBidding" EntitySet="tblBidding" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblBiddin__Reque__2A4B4B5E" Association="Self.FK__tblBiddin__Reque__2A4B4B5E">
+      <End Role="tblCropRequest" EntitySet="tblCropRequest" />
+      <End Role="tblBidding" EntitySet="tblBidding" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblContac__Appro__2F10007B" Association="Self.FK__tblContac__Appro__2F10007B">
+      <End Role="tblAdmin" EntitySet="tblAdmin" />
+      <End Role="tblContactUs" EntitySet="tblContactUs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblCropRe__Appro__276EDEB3" Association="Self.FK__tblCropRe__Appro__276EDEB3">
+      <End Role="tblAdmin" EntitySet="tblAdmin" />
+      <End Role="tblCropRequest" EntitySet="tblCropRequest" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblCropRe__Farme__267ABA7A" Association="Self.FK__tblCropRe__Farme__267ABA7A">
+      <End Role="tblFarmer" EntitySet="tblFarmer" />
+      <End Role="tblCropRequest" EntitySet="tblCropRequest" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblFarmer__Appro__145C0A3F" Association="Self.FK__tblFarmer__Appro__145C0A3F">
+      <End Role="tblAdmin" EntitySet="tblAdmin" />
+      <End Role="tblFarmer" EntitySet="tblFarmer" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblFarmLa__Farme__1B0907CE" Association="Self.FK__tblFarmLa__Farme__1B0907CE">
+      <End Role="tblFarmer" EntitySet="tblFarmer" />
+      <End Role="tblFarmLand" EntitySet="tblFarmLand" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblInsura__Appro__32E0915F" Association="Self.FK__tblInsura__Appro__32E0915F">
+      <End Role="tblAdmin" EntitySet="tblAdmin" />
+      <End Role="tblInsurance" EntitySet="tblInsurance" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblInsura__Appro__36B12243" Association="Self.FK__tblInsura__Appro__36B12243">
+      <End Role="tblAdmin" EntitySet="tblAdmin" />
+      <End Role="tblInsuranceClaim" EntitySet="tblInsuranceClaim" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblInsura__Farme__31EC6D26" Association="Self.FK__tblInsura__Farme__31EC6D26">
+      <End Role="tblFarmer" EntitySet="tblFarmer" />
+      <End Role="tblInsurance" EntitySet="tblInsurance" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblInsura__Polic__35BCFE0A" Association="Self.FK__tblInsura__Polic__35BCFE0A">
+      <End Role="tblInsurance" EntitySet="tblInsurance" />
+      <End Role="tblInsuranceClaim" EntitySet="tblInsuranceClaim" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblSales__Approv__239E4DCF" Association="Self.FK__tblSales__Approv__239E4DCF">
+      <End Role="tblAdmin" EntitySet="tblAdmin" />
+      <End Role="tblSales" EntitySet="tblSales" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblSales__Bidder__22AA2996" Association="Self.FK__tblSales__Bidder__22AA2996">
+      <End Role="tblBidder" EntitySet="tblBidder" />
+      <End Role="tblSales" EntitySet="tblSales" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblSales__Farmer__21B6055D" Association="Self.FK__tblSales__Farmer__21B6055D">
+      <End Role="tblFarmer" EntitySet="tblFarmer" />
+      <End Role="tblSales" EntitySet="tblSales" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

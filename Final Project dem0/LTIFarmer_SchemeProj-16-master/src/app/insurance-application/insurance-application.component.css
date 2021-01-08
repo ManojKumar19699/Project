@@ -1,0 +1,33 @@
+.item {
+    float:left;
+    padding-left: 50%;
+    padding: 0px 0px 0px 16px !important;
+    border: none;
+    vertical-align: middle;
+    height: 15px;
+    line-height: 40px;
+}
+
+.form1{
+    float:center;
+    /* padding-left: 150px; */
+}
+
+.center {
+    margin: auto;
+    width: 60%;
+    border: 3px solid #73AD21;
+    padding: 10px;
+  }
+
+.container{
+    text-align: center;
+}
+
+#Season,#CropName{
+    width: 50%;
+}
+
+label{
+    font-size:20px;
+}

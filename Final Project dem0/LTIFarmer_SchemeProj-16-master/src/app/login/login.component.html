@@ -1,0 +1,77 @@
+<div class="banner" id="banner">
+    <div class="bg-overlay2">
+<!-- Contact -->
+<div class="contact" id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="text-center">
+                    <h3>Login Here!</h3>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="contact-form1">
+                    <form role="form" #loginform="ngForm" (ngSubmit)="OnLogin(loginform)">
+                        <div>
+                            <label for="Email">Enter Email-id: </label><br>
+                            <input type="text" class="form-control" id="email" name="Email" [(ngModel)]=login.Email #Email="ngModel" placeholder="Email Id" 
+                            required email style="color:white;">
+                        </div><br>
+                        <!-- email validation -->
+                        <div *ngIf="!Email?.valid && (Email?.dirty || Email?.touched)" class="error">
+                            <div *ngIf="Email.errors.required">
+                                <small class="text-danger">Customer Emailid Required!</small>
+                            </div>
+                            <div *ngIf="Email.errors.email">
+                                <small class="text-danger">Email should be correct format!</small>
+                            </div>
+                        </div><br>
+
+
+                        <div>
+                            <label for="Password">Enter Password: </label><br>
+                            <input type="password" class="form-control" id="name" name="Password" [(ngModel)]=login.Password #Password="ngModel" placeholder="Password" required style="color:white;">
+                        </div><br>
+                        <!-- password validation -->
+                        <div *ngIf="!Password?.valid && (Password?.dirty || Password?.touched)" class="error">
+                            <div *ngIf="Password.errors?.required">
+                                <small class="text-danger">Password Required!</small>
+                            </div>
+                        </div><br>
+
+                        <div>
+                            <label for="UserType">Enter User Type: </label><br>
+                            <input type="radio" name="UserType" value="Admin" [(ngModel)]=login.UserType #UserType="ngModel">Admin &nbsp;&nbsp;
+                            <input type="radio" name="UserType" value="Farmer" [(ngModel)]=login.UserType #UserType="ngModel">Farmer &nbsp;&nbsp;
+                            <input type="radio" name="UserType" value="Bidder" [(ngModel)]=login.UserType #UserType="ngModel">Bidder &nbsp;&nbsp;
+                        </div><br>
+
+                        <br>
+                        <a (click)="gotoForgPass()">
+                            Forgot Password for Registered Users !!!
+                        </a>
+                        <br><br><br>
+                        <a (click)="gotoRegDash()">
+                            New User? Register Here!
+                        </a>
+                        
+                        <div class="col-md-12 text-center ">
+                            <button type="submit " class="contact-button" [disabled]=!loginform.valid>Login</button>
+                        </div>
+                    </form>
+
+                </div>
+
+            </div>
+            <div class="col-md-6">
+                <br><br><br>
+                
+                <img src="assets/images/login.jpg" alt="about" width="90%" height="90%" />
+            </div>
+        </div>
+    </div>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br>
+</div>
+</div>

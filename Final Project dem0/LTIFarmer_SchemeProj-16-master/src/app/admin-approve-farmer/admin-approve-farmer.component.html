@@ -1,0 +1,51 @@
+<div class="banner3" id="banner3">
+    <div class="bg-overlay2">
+<div class="contact" id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="text-center">
+                    <h3>Approve Farmer</h3>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <table class="table">
+                    <thead>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>ContactNo</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>City</th>
+                        <th>State</th>
+                        <th>Pincode</th>
+                        <th>Aadhar</th>
+                        <th>Certificate</th>
+                        <th>Action</th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let f of unapprovedfarmers">
+                            <td>{{f.FarmerId}}</td>
+                            <td>{{f.FarmerName}}</td>
+                            <td>{{f.FarmerContactNo}}</td>
+                            <td>{{f.FarmerEmail}}</td>
+                            <td>{{f.FarmerAddress}}</td>
+                            <td>{{f.FarmerCity}}</td>
+                            <td>{{f.FarmerState}}</td>
+                            <td>{{f.FarmerPincocde}}</td>
+                            <td><img src="https://localhost:44365/Image/{{f.FarmerAadhar}}" width="150" height="150" alt="{{f.FarmerAadhar}}"/></td>
+                            <td><img src="https://localhost:44365/Image/{{f.FarmerCertificate}}" width="150" height="150" alt="{{f.FarmerCertificate}}"/>{{f.FarmerCertificate}}</td>
+                            <td><button type="button" class="contact-button" style="background:green;" (click)="approveFarmer(f.FarmerId)">Approve Farmer</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+</div>
+</div>

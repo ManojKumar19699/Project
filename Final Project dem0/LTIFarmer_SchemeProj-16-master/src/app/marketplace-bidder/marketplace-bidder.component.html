@@ -1,0 +1,61 @@
+<p>marketplace-bidder works!</p>
+<div class="banner" id="banner">
+  <div class="bg-overlay">
+<br>
+<br>
+    <br>
+<h2><p style="text-align: center;">Welcome to Market Place</p></h2>
+<br>
+<br>
+<br>
+
+<table border="1" width="100%" cellspacing="0" cellpadding>
+    <tr>
+        <th>BiddingID</th>
+        <th>CropType</th>
+        <th>CropName</th>
+        <th>InitialPrice</th>
+        <th>CurrentBidPrice</th>
+        <th>BidCloseTime</th>
+
+
+    </tr>
+    <tr *ngFor="let b of currentbids">
+        <td>{{b.BiddingId}}</td>
+        <td>{{b.CropType}}</td>
+        <td>{{b.CropName}}</td>
+        <td>{{b.InitialPrice}}</td>
+        <td>{{b.CurrentBidPrice}}</td>
+        <td>{{b.BidCloseTime}}</td>
+        <td><button type="button" (click)="gotoauction(b.BiddingId)">Go to Auction</button></td>
+    </tr>
+</table>
+
+
+
+    
+
+    <!-- <div class="container">
+      <div class="row" style="height: auto;">
+          <div class="col-md-3 my-5" *ngFor="let b of currentbids" style=" margin-right:50px;margin-bottom:50px;">
+              <div class="card" (click)="gotoauction(b.BiddingId)">
+                  <div class="gradient" style="background-image: linear-gradient(0deg, #0703fa, transparent);"></div>
+                  <div class="info">
+                      <div class="title"><h1>{{b.CropName}}</h1></div>
+                      <b>Quantiy: {{b.Quantity}} Quintals</b>
+                      <p>CropType : {{b.CropType}}</p>
+                    <p>Initial Price : ₹ {{b.InitialPrice}}</p>
+                    <p>Current Price: ₹ {{b.CurrentBidPrice}}</p>
+
+                      <div class="title">Farmers</div> 
+                  </div>
+              </div>
+          </div>
+      </div>
+      </div>  -->
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+      </div>
+</div> 
+
+

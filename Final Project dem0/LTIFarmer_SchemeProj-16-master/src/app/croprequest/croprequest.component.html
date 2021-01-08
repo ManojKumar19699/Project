@@ -1,0 +1,70 @@
+<p>croprequest works!</p>
+
+<div class="banner" id="banner">
+  <div class="bg-overlay3">
+
+<h2>Welcome To Crop Request Page</h2>
+<div class ="wrk">
+<div class="container">
+<form role="form" #crpreq="ngForm" (ngSubmit)="OnSubmit(CropType,CropName,Quantity,FertilizerType,SoilPhCertificate); crpreq.reset()">
+    <div class="form-group">
+        <label for="CropType"> Crop Type :</label>
+          <select class="form-control" name="CropType" id="crop-type" [(ngModel)]="CrpReq.CropType" #CropType="ngModel" 
+          style="background-color:grey;color:white">
+        <option selected>Default</option>
+        <option *ngFor ="let ct of drpCropType" >{{ct}}</option>
+        </select>
+    </div>
+    <br>
+
+    <div class="form-group">
+        <label for="CropName"> Crop Name :</label>
+          <select class="form-control" name="CropName" id="crop-name" [(ngModel)]="CrpReq.CropName" #CropName="ngModel" 
+          required style="background-color:grey;color:white"> 
+         <option selected>Default</option>
+         <optgroup *ngFor = 'let grp of dataSource' label="{{grp.group}}">
+        <option *ngFor = 'let item of grp.items' [value]="item.id">{{item.name}}</option> 
+      </optgroup>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="FertilizerType"> Fertilizer Type :</label>
+        <select class="form-control" id="Fertilizer-type" name="FertilizerType" [(ngModel)]="CrpReq.FertilizerType" #FertilizerType="ngModel"
+         style="background-color:grey;color:white">
+        <option *ngFor ="let ft of drpFertilizeType" >{{ft}}</option>
+        </select>  
+    </div>
+    <br>
+
+    <div class ="form-group">
+    <label for="file">Ph Certificate</label>
+    
+    <input type="file" class="form-control" id="soil-ph-certificate" name="SoilPhCertificate" [(ngModel)]="CrpReq.SoilPhCertificate" #SoilPhCertificate="ngModel" (change)="handleFileInput($event.target.files)"
+    style="color:white">
+    <!--<img [src]="imageUrl"  style="width:250px;height:200px">-->
+    </div>
+    <br>
+
+        <div class ="form-group">
+        <label for ="Quantity">Quantity in quintals</label>
+        <input type="number" class ="form-control" id="quantity" name="Quantity" [(ngModel)]="CrpReq.Quantity" #Quantity="ngModel" style="color:white">
+    </div>
+
+    <button type="submit" class="contact-button" style="background:green;" [disabled]="SoilPhCertificate.value == ''">Submit</button>
+</form>
+
+</div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<br>
+
+</div>
+</div>

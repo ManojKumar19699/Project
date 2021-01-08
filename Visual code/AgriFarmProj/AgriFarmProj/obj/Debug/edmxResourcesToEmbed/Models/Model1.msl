@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="dbProjectModelStoreContainer" CdmEntityContainer="dbProjectEntities">
+    <EntitySetMapping Name="tblAdmins">
+      <EntityTypeMapping TypeName="dbProjectModel.tblAdmin">
+        <MappingFragment StoreEntitySet="tblAdmin">
+          <ScalarProperty Name="AdminId" ColumnName="AdminId" />
+          <ScalarProperty Name="AdminName" ColumnName="AdminName" />
+          <ScalarProperty Name="AdminContact" ColumnName="AdminContact" />
+          <ScalarProperty Name="AdminEmail" ColumnName="AdminEmail" />
+          <ScalarProperty Name="AdminPass" ColumnName="AdminPass" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBanks">
+      <EntityTypeMapping TypeName="dbProjectModel.tblBank">
+        <MappingFragment StoreEntitySet="tblBank">
+          <ScalarProperty Name="AccountNo" ColumnName="AccountNo" />
+          <ScalarProperty Name="FarmerId" ColumnName="FarmerId" />
+          <ScalarProperty Name="BidderId" ColumnName="BidderId" />
+          <ScalarProperty Name="IFSC_Code" ColumnName="IFSC_Code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBidders">
+      <EntityTypeMapping TypeName="dbProjectModel.tblBidder">
+        <MappingFragment StoreEntitySet="tblBidder">
+          <ScalarProperty Name="BidderId" ColumnName="BidderId" />
+          <ScalarProperty Name="BidderName" ColumnName="BidderName" />
+          <ScalarProperty Name="BidderContactNo" ColumnName="BidderContactNo" />
+          <ScalarProperty Name="BidderEmail" ColumnName="BidderEmail" />
+          <ScalarProperty Name="BidderAddress" ColumnName="BidderAddress" />
+          <ScalarProperty Name="BidderCity" ColumnName="BidderCity" />
+          <ScalarProperty Name="BidderState" ColumnName="BidderState" />
+          <ScalarProperty Name="BidderPincocde" ColumnName="BidderPincocde" />
+          <ScalarProperty Name="BidderAadhar" ColumnName="BidderAadhar" />
+          <ScalarProperty Name="BidderPAN" ColumnName="BidderPAN" />
+          <ScalarProperty Name="BidderTradeLicense" ColumnName="BidderTradeLicense" />
+          <ScalarProperty Name="BidderPassword" ColumnName="BidderPassword" />
+          <ScalarProperty Name="BidderApproved" ColumnName="BidderApproved" />
+          <ScalarProperty Name="ApprovalAdminId" ColumnName="ApprovalAdminId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBiddings">
+      <EntityTypeMapping TypeName="dbProjectModel.tblBidding">
+        <MappingFragment StoreEntitySet="tblBidding">
+          <ScalarProperty Name="BiddingId" ColumnName="BiddingId" />
+          <ScalarProperty Name="RequestId" ColumnName="RequestId" />
+          <ScalarProperty Name="BidderId" ColumnName="BidderId" />
+          <ScalarProperty Name="InitialPrice" ColumnName="InitialPrice" />
+          <ScalarProperty Name="CurrentBidPrice" ColumnName="CurrentBidPrice" />
+          <ScalarProperty Name="PreviousBidPrice" ColumnName="PreviousBidPrice" />
+          <ScalarProperty Name="BidCloseTime" ColumnName="BidCloseTime" />
+          <ScalarProperty Name="ApprovalAdminId" ColumnName="ApprovalAdminId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblContactUs">
+      <EntityTypeMapping TypeName="dbProjectModel.tblContactU">
+        <MappingFragment StoreEntitySet="tblContactUs">
+          <ScalarProperty Name="RequestToken" ColumnName="RequestToken" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="ContactName" ColumnName="ContactName" />
+          <ScalarProperty Name="RequestType" ColumnName="RequestType" />
+          <ScalarProperty Name="message" ColumnName="message" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="ApprovalAdminId" ColumnName="ApprovalAdminId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCropRequests">
+      <EntityTypeMapping TypeName="dbProjectModel.tblCropRequest">
+        <MappingFragment StoreEntitySet="tblCropRequest">
+          <ScalarProperty Name="RequestId" ColumnName="RequestId" />
+          <ScalarProperty Name="FarmerId" ColumnName="FarmerId" />
+          <ScalarProperty Name="CropType" ColumnName="CropType" />
+          <ScalarProperty Name="CropName" ColumnName="CropName" />
+          <ScalarProperty Name="FertilizerType" ColumnName="FertilizerType" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="SoilPhCertificate" ColumnName="SoilPhCertificate" />
+          <ScalarProperty Name="CropApproved" ColumnName="CropApproved" />
+          <ScalarProperty Name="ApprovalAdminId" ColumnName="ApprovalAdminId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblFarmers">
+      <EntityTypeMapping TypeName="dbProjectModel.tblFarmer">
+        <MappingFragment StoreEntitySet="tblFarmer">
+          <ScalarProperty Name="FarmerId" ColumnName="FarmerId" />
+          <ScalarProperty Name="FarmerName" ColumnName="FarmerName" />
+          <ScalarProperty Name="FarmerContactNo" ColumnName="FarmerContactNo" />
+          <ScalarProperty Name="FarmerEmail" ColumnName="FarmerEmail" />
+          <ScalarProperty Name="FarmerAddress" ColumnName="FarmerAddress" />
+          <ScalarProperty Name="FarmerCity" ColumnName="FarmerCity" />
+          <ScalarProperty Name="FarmerState" ColumnName="FarmerState" />
+          <ScalarProperty Name="FarmerPincocde" ColumnName="FarmerPincocde" />
+          <ScalarProperty Name="FarmerAadhar" ColumnName="FarmerAadhar" />
+          <ScalarProperty Name="FarmerPAN" ColumnName="FarmerPAN" />
+          <ScalarProperty Name="FarmerCertificate" ColumnName="FarmerCertificate" />
+          <ScalarProperty Name="FarmerPassword" ColumnName="FarmerPassword" />
+          <ScalarProperty Name="FarmerApproved" ColumnName="FarmerApproved" />
+          <ScalarProperty Name="ApprovalAdminId" ColumnName="ApprovalAdminId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblFarmLands">
+      <EntityTypeMapping TypeName="dbProjectModel.tblFarmLand">
+        <MappingFragment StoreEntitySet="tblFarmLand">
+          <ScalarProperty Name="FarmerLandId" ColumnName="FarmerLandId" />
+          <ScalarProperty Name="FarmerId" ColumnName="FarmerId" />
+          <ScalarProperty Name="FarmerLandArea" ColumnName="FarmerLandArea" />
+          <ScalarProperty Name="FarmerLandAddress" ColumnName="FarmerLandAddress" />
+          <ScalarProperty Name="FarmerLandPincode" ColumnName="FarmerLandPincode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblInsurances">
+      <EntityTypeMapping TypeName="dbProjectModel.tblInsurance">
+        <MappingFragment StoreEntitySet="tblInsurance">
+          <ScalarProperty Name="PolicyNo" ColumnName="PolicyNo" />
+          <ScalarProperty Name="FarmerId" ColumnName="FarmerId" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="Season" ColumnName="Season" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Crop" ColumnName="Crop" />
+          <ScalarProperty Name="SumInsured" ColumnName="SumInsured" />
+          <ScalarProperty Name="DateOfInsurance" ColumnName="DateOfInsurance" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+          <ScalarProperty Name="ApprovalAdminId" ColumnName="ApprovalAdminId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblInsuranceClaims">
+      <EntityTypeMapping TypeName="dbProjectModel.tblInsuranceClaim">
+        <MappingFragment StoreEntitySet="tblInsuranceClaim">
+          <ScalarProperty Name="CliamId" ColumnName="CliamId" />
+          <ScalarProperty Name="PolicyNo" ColumnName="PolicyNo" />
+          <ScalarProperty Name="CauseOfClaim" ColumnName="CauseOfClaim" />
+          <ScalarProperty Name="DateOfLoss" ColumnName="DateOfLoss" />
+          <ScalarProperty Name="DateOfClaim" ColumnName="DateOfClaim" />
+          <ScalarProperty Name="AmountClaimed" ColumnName="AmountClaimed" />
+          <ScalarProperty Name="ApprovalStatus" ColumnName="ApprovalStatus" />
+          <ScalarProperty Name="ApprovalAdminId" ColumnName="ApprovalAdminId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSales">
+      <EntityTypeMapping TypeName="dbProjectModel.tblSale">
+        <MappingFragment StoreEntitySet="tblSales">
+          <ScalarProperty Name="SalesId" ColumnName="SalesId" />
+          <ScalarProperty Name="FarmerId" ColumnName="FarmerId" />
+          <ScalarProperty Name="BidderId" ColumnName="BidderId" />
+          <ScalarProperty Name="CropName" ColumnName="CropName" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="MinSalePrice" ColumnName="MinSalePrice" />
+          <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+          <ScalarProperty Name="SoldPrice" ColumnName="SoldPrice" />
+          <ScalarProperty Name="SaleDate" ColumnName="SaleDate" />
+          <ScalarProperty Name="ApprovalAdminId" ColumnName="ApprovalAdminId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_bidding" FunctionName="dbProjectModel.Store.sp_bidding">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbProjectModel.sp_bidding_Result">
+          <ScalarProperty Name="BiddingId" ColumnName="BiddingId" />
+          <ScalarProperty Name="CropType" ColumnName="CropType" />
+          <ScalarProperty Name="CropName" ColumnName="CropName" />
+          <ScalarProperty Name="InitialPrice" ColumnName="InitialPrice" />
+          <ScalarProperty Name="CurrentBidPrice" ColumnName="CurrentBidPrice" />
+          <ScalarProperty Name="PreviousBidPrice" ColumnName="PreviousBidPrice" />
+          <ScalarProperty Name="BidCloseTime" ColumnName="BidCloseTime" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>
