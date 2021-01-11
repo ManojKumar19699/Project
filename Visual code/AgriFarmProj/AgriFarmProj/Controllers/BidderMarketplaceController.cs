@@ -21,40 +21,6 @@ namespace AgriFarmProj.Controllers
         {
             List<sp_bidding_Result> res = db.sp_bidding().ToList();
             return res.AsQueryable();
-            //var cp = (from crps in db.tblCropRequests
-            //          join bd in db.tblBiddings on
-            //          crps.RequestId equals bd.RequestId
-            //          select new
-            //          {
-            //              bd.BiddingId,
-            //              crps.CropType,
-            //              crps.CropName,
-            //              crps.Quantity,
-            //              bd.InitialPrice,
-            //              bd.PreviousBidPrice,
-            //              bd.BidCloseTime,
-            //              bd.CurrentBidPrice,
-            //              bd.ApprovalAdminId
-            //          }).ToList();
-            //List<BiddingCrops> output = new List<BiddingCrops>();
-            //foreach (var item in cp)
-            //{
-            //    DateTime t1 = (DateTime)item.BidCloseTime;
-            //    if (t1.Date >= DateTime.Now.Date && t1.TimeOfDay > DateTime.Now.TimeOfDay && item.ApprovalAdminId == null)
-            //    {
-            //        BiddingCrops bd = new BiddingCrops();
-            //        bd.BiddingId = (int)item.BiddingId;
-            //        bd.CropName = item.CropName;
-            //        bd.CropType = item.CropType;
-            //        bd.Quantity = (int)item.Quantity;
-            //        bd.InitialPrice = (int)item.InitialPrice;
-            //        bd.CurrentBidPrice = (int)item.CurrentBidPrice;
-            //        bd.PreviousBidPrice = (int)item.PreviousBidPrice;
-            //        bd.BidCloseTime = (DateTime)item.BidCloseTime;
-            //        output.Add(bd);
-            //    }
-            //}
-            
         }
 
 
@@ -112,28 +78,13 @@ namespace AgriFarmProj.Controllers
         public IHttpActionResult GetAuctionDetails()
         {
             // List<tblBidding> res = db.tblBiddings.ToList();
-            var cp = (from crps in db.tblCropRequests
-                      join bd in db.tblBiddings on crps.RequestId equals bd.RequestId
-                      join fmr in db.tblFarmers on crps.FarmerId equals fmr.FarmerId
-                      select new
-                      {
-                          bd.BiddingId,
-                          bd.BidderId,
-                          fmr.FarmerId,
-                          crps.CropType,
-                          crps.CropName,
-                          bd.InitialPrice,
-                          crps.Quantity,
-                          bd.BidCloseTime,
-                          bd.CurrentBidPrice,
-                          bd.ApprovalAdminId
-                      }).ToList();
+            List<sp_approveauction_Result> cp = db.sp_approveauction().ToList();
             List<AuctionCropDetails> output = new List<AuctionCropDetails>();
             foreach (var item in cp)
             {
                 DateTime t1 = (DateTime)item.BidCloseTime;
                 //t1.Date>DateTime.Now.Date
-                if (t1.Date < DateTime.Now.Date || t1.TimeOfDay < DateTime.Now.TimeOfDay)
+                //if (t1.Date < DateTime.Now.Date || t1.TimeOfDay < DateTime.Now.TimeOfDay)
                     if (item.ApprovalAdminId == null && item.BidderId != null)
                     {
                         AuctionCropDetails crop = new AuctionCropDetails();

@@ -11,12 +11,12 @@ import { Router } from '@angular/router';
 export class ContactUsComponent implements OnInit {
   res:any;
   contact:Contactus;
-  request:string[]=["Enquiry","Complaint"];
+  request:string[]=["Complaint"];
   constructor(private cot:ContactService) {
     this.contact={
       Email:"",
       ContactName:"",
-      RequestType:"",
+      RequestType:"Complaint",
       Message:"",
       Status:"Not Seen",
       ApprovalAdminId:null

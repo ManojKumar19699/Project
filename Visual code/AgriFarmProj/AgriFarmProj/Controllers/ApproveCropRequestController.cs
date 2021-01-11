@@ -29,6 +29,20 @@ namespace AgriFarmProj.Controllers
             }
             return output.AsQueryable();
         }
+        [Route("api/DeleteCropAdmin/")]
+        public IHttpActionResult DeletetblCropRequest(int id)
+        {
+            tblCropRequest tblCropRequest = db.tblCropRequests.Find(id);
+            if (tblCropRequest == null)
+            {
+                return NotFound();
+            }
+
+            db.tblCropRequests.Remove(tblCropRequest);
+            db.SaveChanges();
+
+            return Ok(tblCropRequest);
+        }
 
 
         [Route("api/ApproveCropAdmin/")]
@@ -47,7 +61,7 @@ namespace AgriFarmProj.Controllers
             tblBidding.CurrentBidPrice = initprice;
             tblBidding.PreviousBidPrice = initprice;
             DateTime dateTime = DateTime.Now;
-            tblBidding.BidCloseTime = dateTime.AddMinutes(15);
+            tblBidding.BidCloseTime = dateTime.AddMinutes(720);
             db.tblBiddings.Add(tblBidding);
             db.SaveChanges();
             return Ok("OK");

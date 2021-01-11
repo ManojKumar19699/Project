@@ -21,7 +21,7 @@ namespace AgriFarmProj.Controllers
         {
             var message = new MailMessage();
             message.To.Add(new MailAddress("<" + email.To + ">"));
-            message.From = new MailAddress("AgriFarm <manojkumar19699@gmail.com>");
+            message.From = new MailAddress("AgriFarm <ltifarmapp6@gmail.com>");
             message.Subject = email.Subject;
             message.Body = email.Body;
             message.IsBodyHtml = true;
@@ -44,7 +44,7 @@ namespace AgriFarmProj.Controllers
         {
             var message = new MailMessage();
             message.To.Add(new MailAddress("<" + to + ">"));
-            message.From = new MailAddress("AgriFarm <manojkumar19699@gmail.com>");
+            message.From = new MailAddress("AgriFarm <ltifarmapp16@gmail.com>");
             message.Subject = "User Approval";
             message.Body = "<b><h2>Hello</h2> " + to + ",</b><br><h3> You are now an approved user for AgriFarm! Please continue to our site by login</h3>";
             message.IsBodyHtml = true;
@@ -73,7 +73,7 @@ namespace AgriFarmProj.Controllers
                             select f.FarmerEmail).ToList();
                 var message = new MailMessage();
                 message.To.Add(new MailAddress("<" + user[0] + ">"));
-                message.From = new MailAddress("AgriFarm <manojkumar19699@gmail.com>");
+                message.From = new MailAddress("AgriFarm <ltifarmapp16@gmail.com>");
                 message.Subject = "Claim Approval";
                 message.Body = "<b><h2>Hello</h2> " + user[0] + ",</b><br><h3>For the policy number <b>" + policyno + "</b>, your claim has been approved!</h3>";
                 message.IsBodyHtml = true;
@@ -112,14 +112,14 @@ namespace AgriFarmProj.Controllers
 
         [Route("api/EmailSent/")]
         [HttpPost]
-        public IHttpActionResult Post([FromUri] string mail, int id)
+        public IHttpActionResult Post([FromUri] string mail, int Id)
         {
             var currentmsg = db.tblContactUs.Where(c => c.Email.Equals(mail))
                    .FirstOrDefault<tblContactU>();
             if (currentmsg != null)
             {
                 currentmsg.status = "Replied";
-                currentmsg.ApprovalAdminId = id;
+                currentmsg.ApprovalAdminId = Id;
                 db.SaveChanges();
             }
             else

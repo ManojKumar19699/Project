@@ -25,24 +25,24 @@ export class AdminApproveClaimComponent implements OnInit {
   }
 
 
-  approveClaim(id){
+  approveClaim(Id){
     let i;
     for(i=0;i<this.unapprovedclaims.length;i++){
-      if(this.unapprovedclaims[i].Cliamid==id) break;
+      if(this.unapprovedclaims[i].CliamId==Id) break;
     }
     console.log(this.unapprovedclaims[i]);
     //this.adminapproveclaimservice.updateClaim(this.unapprovedclaims[i]);
     //this.router.navigate(['ApproveClaim']);
     this.adminapproveclaimservice.updateClaim(this.unapprovedclaims[i]).subscribe((data)=>{console.log(data)});
-    this.mailservice.ClaimApproval(this.unapprovedclaims[i].PolicyNo).subscribe((data)=>{
-      if(data=="mail sent"){
-        alert("Claim Approved!");
-        location.reload();
-      }
-      else{
-        alert("Error! Try again");
-      }
-      });
+    // this.mailservice.ClaimApproval(this.unapprovedclaims[i].PolicyNo).subscribe((data)=>{
+    //   if(data=="mail sent"){
+    //     alert("Claim Approved!");
+    //     location.reload();
+    //   }
+    //   else{
+    //     alert("Error! Try again");
+    //   }
+    //   });
 
     //location.reload();
   }

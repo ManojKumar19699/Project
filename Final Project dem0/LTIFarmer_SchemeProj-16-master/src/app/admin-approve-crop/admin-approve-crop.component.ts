@@ -31,6 +31,21 @@ export class AdminApproveCropComponent implements OnInit {
       if(data=="OK") alert("Crop sale Approved");
       location.reload();
     });
+
+    // delCrop(Id)
+    // {
+    //   let i;
+    // for(i=0;i<this.unapprovedcrops.length;i++){
+    //   if(this.unapprovedcrops[i].RequestId==Id) break;
+    // }
+    // console.log(this.unapprovedcrops[i]);
+    // //this.adminapprovecropservice.updateCrop(this.unapprovedcrops[i]);
+    // this.adminapprovecropservice.deletecrop(this.unapprovedcrops[i]).subscribe((data)=>{console.log(data);
+    //   if(data=="OK") alert("Crop sale Deleted");
+    //   location.reload();
+    // });
+
+    //}
     this.ngOnInit();
     //location.reload();
   }

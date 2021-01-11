@@ -16,23 +16,12 @@ namespace AgriFarmProj.Controllers
 
         [HttpGet]
         [Route("Farmerplace")]
-        public HttpResponseMessage Get()
+        public IQueryable Get()
         {
-            var cp = (from crps in db.tblCropRequests
-                      join bd in db.tblBiddings on
-                      crps.RequestId equals bd.RequestId
-                      select new
-                      {
-                          crps.CropType,
-                          crps.CropName,
-                          crps.Quantity,
-                          bd.InitialPrice,
-                          bd.PreviousBidPrice,
-                          bd.BidCloseTime,
-                          bd.CurrentBidPrice
-                      }).ToList();
-            return Request.CreateResponse(HttpStatusCode.OK, cp);
+            List<sp_farmermarket_Result> res = db.sp_farmermarket().ToList();
+            return res.AsQueryable();
         }
     }
 }
+
 

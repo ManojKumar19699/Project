@@ -4,7 +4,8 @@ import { NgForm } from '@angular/forms';
 
 @Injectable()
 export class ContactService{
-    url="https://localhost:61737/api/contactus/";
+    url="http://localhost:64756/contact/";
+    url1="http://localhost:64756/contactget/";
     constructor(private http:HttpClient){
 
     }
@@ -15,6 +16,6 @@ export class ContactService{
     }
 
     getMessage(){
-        return this.http.get(this.url);
+        return this.http.get(this.url1);
     }
 }

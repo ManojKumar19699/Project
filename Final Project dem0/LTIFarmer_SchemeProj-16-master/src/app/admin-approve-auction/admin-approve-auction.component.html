@@ -23,15 +23,16 @@
                     </thead>
                     <tbody>
                         <tr *ngFor="let b of unapprovedbids">
-            <td>{{b.Biddingid}}</td>
-            <td>{{b.Bidderid}}</td>
-            <td>{{b.Farmerid}}</td>
+            <td>{{b.BiddingId}}</td>
+            <td>{{b.BidderId}}</td>
+            <td>{{b.FarmerId}}</td>
             <td>{{b.CropName}}</td>
             <td>{{b.Quantity}}</td>
             <td>{{b.InitialPrice}}</td>
             <td>{{b.CurrentBidPrice}}</td>
-            <td><button type="button" class="contact-button2" style="background:green;" (click)="approveauction(b.Biddingid)">Approve Auction</button></td>
+            <td><button type="button" class="contact-button2" style="background:green;" (click)="approveauction(b.BiddingId)">Approve Auction</button></td>
         </tr>
+    
                     </tbody>
                 </table>
             </div>

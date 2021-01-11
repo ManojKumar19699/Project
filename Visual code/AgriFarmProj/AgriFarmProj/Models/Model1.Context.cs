@@ -43,5 +43,33 @@ namespace AgriFarmProj.Models
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_bidding_Result>("sp_bidding");
         }
+    
+        public virtual ObjectResult<sp_saleshistory_Result> sp_saleshistory(Nullable<int> id)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_saleshistory_Result>("sp_saleshistory", idParameter);
+        }
+    
+        public virtual ObjectResult<sp_salehistoryfarmer_Result> sp_salehistoryfarmer(Nullable<int> id)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_salehistoryfarmer_Result>("sp_salehistoryfarmer", idParameter);
+        }
+    
+        public virtual ObjectResult<sp_farmermarket_Result> sp_farmermarket()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_farmermarket_Result>("sp_farmermarket");
+        }
+    
+        public virtual ObjectResult<sp_approveauction_Result> sp_approveauction()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_approveauction_Result>("sp_approveauction");
+        }
     }
 }

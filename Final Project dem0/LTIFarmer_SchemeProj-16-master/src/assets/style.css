@@ -7,15 +7,46 @@
     margin: 0px;
 }
 
+.div2
+{
+    border-radius: 5px;
+    background: rgb(255,255,255,.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,.5);
+    max-height:2000px;
+    padding : 20px;
+
+}
+
+.div1 {
+    border-radius: 5px;
+    background-color: grey;
+    max-height:560px;
+    padding : 20px;
+  }
+
 body {
     font-family: 'Work Sans', sans-serif;
 }
 
-h1,
-h2,
+h2{
+   font-family:'Lobster';
+   
+}
+
+h1
+{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+label{
+    color: black;
+}
+
+
+h3,
 h5,
 h6 {
-    font-family: 'Oleo Script Swash Caps', cursive;
+    color: black;
 }
 
 a {
@@ -26,7 +57,7 @@ a {
 /*-----Header & Banner Starts-------*/
 
 .navbar-brand {
-    font-family: 'Oleo Script Swash Caps', cursive;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, cursive;
     color: #ffffff;
     font-size: 20px;
     text-align: left;
@@ -44,10 +75,20 @@ a {
     background-color: RGBA(0, 0, 0, 0.48);
 }
 
-.banner {
+.banner
+{
+    background-attachment: fixed;
+    background-image: url(images/background.jpg);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.banner10{
     background-attachment: fixed;
     background-color: #077542;
-    background-image: url(images/background.jpg);
+    background-image: url(images/bidimage.jpg);
     background-position: top center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -56,7 +97,21 @@ a {
     text-align: center;
     width: 100%;
     float: left;
-}
+} 
+
+.banner {
+    background-attachment: fixed;
+    background-color: #077542;
+    
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    cursor: default;
+    text-align: center;
+    width: 100%;
+    float: left;
+} 
 
 .banner2 {
     background-attachment: fixed;
@@ -86,20 +141,33 @@ a {
     float: left;
 }
 
+.box
+{
+    position:relative;
+    max-width: 700px;
+    padding: 30px;
+    margin-left:400px ;
+    margin-top: 5%;
+    background: rgb(255,255,255,.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,.5);
+}
 
 
+
+
+/* padding: 200px 0 220px; */
 .bg-overlay {
-    padding: 200px 0 220px;
-    background-color: RGBA(15, 5, 20, 0.84);
+    
+    background-color: RGBA(0, 0, 0, 0.7);
 }
 
 .bg-overlay1 {
-    background-color: RGBA(15, 5, 20, 0.84);
+    background-color: RGBA(15, 5, 20, 0.7);
 }
 
 .bg-overlay2 {
     padding: 80px 0 20px;
-    background-color: RGBA(15, 5, 20, 0.84);
+    background-color: RGBA(15, 5, 20, 0.7);
 }
 
 
@@ -131,6 +199,7 @@ th,td{
 }
 
 .banner-text p {
+    color: blanchedalmond;
     font-size: 15px;
 }
 
@@ -154,7 +223,7 @@ th,td{
 
 .mynav {
     transition: all 0.8s ease-in;
-    background: rgb(5, 56, 30) none repeat scroll 0% 0%;
+    background: rgb(5, 43, 1) none repeat scroll 0% 0%;
 }
 
 .mynav li a {
@@ -172,9 +241,9 @@ th,td{
 .nav>li>a:hover,
 .nav>li>a:focus,
 .nav>li.active>a {
-    background-color: #077542;
+    background-color: #300303;
     color: #fff;
-    border-bottom: 2px solid #065004;
+    border-bottom: 2px solid #300303;
 }
 
 .navbar-nav>li>a {
@@ -394,7 +463,7 @@ th,td{
 .about h3 {
     margin-top: 0px;
     margin-bottom: 50px;
-    border-bottom: 2px solid #EB233C;
+    border-bottom: 2px solid #c2c2c2;
     display: inline-block;
     line-height: 35px;
 }
@@ -435,7 +504,7 @@ th,td{
 .contact h3 {
     margin-top: 0px;
     margin-bottom: 50px;
-    border-bottom: 2px solid #EB233C;
+    border-bottom: 2px solid #ece6e7;
     display: inline-block;
     line-height: 35px;
 }
@@ -444,6 +513,7 @@ th,td{
     margin-top: 45px;
     margin-right: 0;
     margin-left: auto;
+    
 }
 
 .form-control {
@@ -453,14 +523,14 @@ th,td{
     padding: 6px 12px;
     font-size: 14px;
     line-height: 1.42857;
-    color: #242424;
+    color: #ffffff;
     background-color: transparent;
     background-image: none;
     border: none;
     border-radius: 0px;
     box-shadow: none;
     transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
-    border-bottom: 2px solid #EB233C;
+    border-bottom: 2px solid #0b3611;
     resize: none;
     margin-top: 5px;
 }
@@ -501,7 +571,7 @@ textarea:-ms-input-placeholder {
     display: inline-block;
     border-radius: 25px 25px 25px 25px;
     font-size: 15px;
-    background-color: #EB233C;
+    background-color:silver;
     margin-top: 30px;
 }
 

@@ -11,13 +11,13 @@ export class ClaimRequestService {
 
         console.log(Claimrequest.value);
         const httpheader={headers: new HttpHeaders({'Content-Type': 'application/json'})};
-        return this.http.post("http://localhost:64756/api/IsuranceList",JSON.stringify(Claimrequest.value),httpheader);
+        return this.http.post("http://localhost:64756/IsuranceList",JSON.stringify(Claimrequest.value),httpheader);
     } 
 
     listInsurance()
     {
         //formData.append('FarmerID',sessionStorage.getItem("fid"));
-        return this.http.get("http://localhost:64756/Specific/?id="+sessionStorage.getItem("fid"));
+        return this.http.get("http://localhost:64756/Specific/?Id="+sessionStorage.getItem("fid"));
     }
 
 }

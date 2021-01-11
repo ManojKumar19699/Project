@@ -5,19 +5,19 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"> 
                     <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
                  </button>
-                <a class="navbar-brand" routerLink="Home">FarmApp</a> </div>
+                <a  class="navbar-brand" routerLink="Home">FarmApp</a> </div>
             <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav navbar-left">
                     <li *ngIf="!(loginsessionuser)" class="active"><a routerLink="Home"><span class="glyphicon glyphicon-home"></span>&nbsp;Home</a></li>
                     <li *ngIf="(loginsessionuser && usertype=='admin')" class="active"><a routerLink="AdminHome"><span class="glyphicon glyphicon-home"></span>&nbsp;AdminHome</a></li>
                     <li *ngIf="(loginsessionuser && usertype=='farmer')" class="active"><a routerLink="FarmerHome"><span class="glyphicon glyphicon-home"></span>&nbsp;FarmerHome</a></li>
                     <li *ngIf="(loginsessionuser && usertype=='bidder')" class="active"><a routerLink="BidderHome"><span class="glyphicon glyphicon-home"></span>&nbsp;BidderHome</a></li>
-
-                    <li><a routerLink="Aboutus">About Us</a></li>
-                    <li><a routerLink="Contactus"><span class="glyphicon glyphicon-envelope"></span>&nbsp;Contact Us</a></li>
-                    <li><a routerLink="FAQ">FAQ</a></li>
-
-
+                
+                    <li><a routerLink="Aboutus"><span class="glyphicon glyphicon-info-sign"></span>&nbsp;About Us</a></li>
+                    <li><a routerLink="Contactus"><span class="glyphicon glyphicon-send"></span>&nbsp;Contact Us</a></li>
+                    <li><a routerLink="FAQ"><span class="glyphicon glyphicon-question-sign"></span>&nbsp;FAQ</a></li>
+                   </ul>
+<ul class="nav navbar-nav navbar-right">
                     <li *ngIf="!(loginsessionuser)"><a routerLink="Login"><span class="glyphicon glyphicon-log-in"></span>&nbsp; Login</a></li>
                     <li *ngIf="!(loginsessionuser)"><a routerLink="RegistrationDashboard"><span class="glyphicon glyphicon-user"></span>&nbsp; Register</a></li>
                     <li *ngIf="loginsessionuser"><a>Hello {{username}} </a></li>

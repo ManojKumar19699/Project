@@ -1,9 +1,9 @@
 .container{    
     width:45%; 
-    margin-left:57%; 
+    margin-left:34%; 
     
     height: auto;
-    font-style: italic;
+    font-style:normal;
     /* color:grey; */
    
 }
@@ -11,11 +11,10 @@
 {
     margin-top: 2%;
     width: 90%;
-    background-image: url("/assets/images/farmercropsell.png") ;
-    background-image: 100%;
-    background-repeat: no-repeat, repeat;
-     margin-left:3%;
-    /*margin-right:5%;*/
+   
+     /* margin-left:3%; */
+     margin-right: 550px;
+    
 }
 
 .bg-overlay3 {

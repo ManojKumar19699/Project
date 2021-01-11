@@ -2,7 +2,7 @@ import  {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {NgForm} from '@angular/forms';
 // import { Observable } from 'rxjs/internal/Observable';
-import {FarmerApproval} from '../models/cropbidding.model';
+import {Cropbidding} from '../models/cropbidding.model';
 
 @Injectable()
 export class BidderMarketPlaceService{

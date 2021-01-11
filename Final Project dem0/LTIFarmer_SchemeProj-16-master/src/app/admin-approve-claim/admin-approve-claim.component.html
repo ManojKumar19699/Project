@@ -22,13 +22,13 @@
                     </thead>
                     <tbody>
                         <tr *ngFor="let c of unapprovedclaims">
-                            <td>{{c.Cliamid}}</td>
+                            <td>{{c.CliamId}}</td>
                             <td>{{c.PolicyNo}}</td>
                             <td>{{c.CauseOfClaim}}</td>
                             <td>{{c.DateOfLoss|date:'shortDate'}}</td>
                             <td>{{c.DateOfClaim|date:'shortDate'}}</td>
                             <td>{{c.AmountClaimed}}</td>
-                            <td><button type="button" class="contact-button2" style="background:green;" (click)="approveClaim(c.Cliamid)">Approve Claim</button></td>
+                            <td><button type="button" class="contact-button2" style="background:green;" (click)="approveClaim(c.CliamId)">Approve Claim</button></td>
                         </tr>
                     </tbody>
                 </table>

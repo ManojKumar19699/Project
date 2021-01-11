@@ -110,16 +110,21 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\ApproveBidderController.cs" />
+    <Compile Include="Controllers\ApproveClaimController.cs" />
     <Compile Include="Controllers\ApproveCropRequestController.cs" />
     <Compile Include="Controllers\ApproveFarmerController.cs" />
     <Compile Include="Controllers\BidderMarketplaceController.cs" />
     <Compile Include="Controllers\BidderRegController.cs" />
+    <Compile Include="Controllers\ContactUsController.cs" />
     <Compile Include="Controllers\CropController.cs" />
     <Compile Include="Controllers\DisplayFarmerController.cs" />
     <Compile Include="Controllers\FarmerMarketPlaceController.cs" />
     <Compile Include="Controllers\FarmerRegController.cs" />
+    <Compile Include="Controllers\InsuranceAppController.cs" />
+    <Compile Include="Controllers\InsuranceClaimController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MailController.cs" />
+    <Compile Include="Controllers\PassController.cs" />
     <Compile Include="Controllers\SaleHistoryController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -139,7 +144,19 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\sp_approveauction_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\sp_bidding_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_farmermarket_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_salehistoryfarmer_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_saleshistory_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tblAdmin.cs">
@@ -180,6 +197,7 @@
     <Compile Include="Models\ViewModel\BiddingCrops.cs" />
     <Compile Include="Models\ViewModel\Email.cs" />
     <Compile Include="Models\ViewModel\FarmerReg.cs" />
+    <Compile Include="Models\ViewModel\InsuranceApp.cs" />
     <Compile Include="Models\ViewModel\Login.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

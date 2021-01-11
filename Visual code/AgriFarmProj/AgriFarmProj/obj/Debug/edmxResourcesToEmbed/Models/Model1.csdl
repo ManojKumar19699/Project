@@ -486,6 +486,14 @@
       <End Role="tblInsuranceClaim" EntitySet="tblInsuranceClaims" />
     </AssociationSet>
     <FunctionImport Name="sp_bidding" ReturnType="Collection(dbProjectModel.sp_bidding_Result)" />
+    <FunctionImport Name="sp_saleshistory" ReturnType="Collection(dbProjectModel.sp_saleshistory_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_salehistoryfarmer" ReturnType="Collection(dbProjectModel.sp_salehistoryfarmer_Result)">
+      <Parameter Name="id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_farmermarket" ReturnType="Collection(dbProjectModel.sp_farmermarket_Result)" />
+    <FunctionImport Name="sp_approveauction" ReturnType="Collection(dbProjectModel.sp_approveauction_Result)" />
   </EntityContainer>
   <ComplexType Name="sp_bidding_Result">
     <Property Type="Int32" Name="BiddingId" Nullable="false" />
@@ -495,5 +503,38 @@
     <Property Type="Int32" Name="CurrentBidPrice" Nullable="true" />
     <Property Type="Int32" Name="PreviousBidPrice" Nullable="true" />
     <Property Type="DateTime" Name="BidCloseTime" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="sp_saleshistory_Result">
+    <Property Type="DateTime" Name="SaleDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="CropName" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="Quantity" Nullable="true" />
+    <Property Type="Int32" Name="MinSalePrice" Nullable="true" />
+    <Property Type="Int32" Name="SoldPrice" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_salehistoryfarmer_Result">
+    <Property Type="DateTime" Name="SaleDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="CropName" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="Quantity" Nullable="true" />
+    <Property Type="Int32" Name="MinSalePrice" Nullable="true" />
+    <Property Type="Int32" Name="SoldPrice" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_farmermarket_Result">
+    <Property Type="String" Name="CropType" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="CropName" Nullable="true" MaxLength="20" />
+    <Property Type="Decimal" Name="Quantity" Nullable="true" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="InitialPrice" Nullable="true" />
+    <Property Type="Int32" Name="CurrentBidPrice" Nullable="true" />
+    <Property Type="DateTime" Name="BidCloseTime" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="sp_approveauction_Result">
+    <Property Type="Int32" Name="BiddingId" Nullable="false" />
+    <Property Type="Int32" Name="BidderId" Nullable="true" />
+    <Property Type="Int32" Name="InitialPrice" Nullable="true" />
+    <Property Type="Int32" Name="CurrentBidPrice" Nullable="true" />
+    <Property Type="DateTime" Name="BidCloseTime" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="ApprovalAdminId" Nullable="true" />
+    <Property Type="Int32" Name="FarmerId" Nullable="false" />
+    <Property Type="String" Name="CropName" Nullable="true" MaxLength="20" />
+    <Property Type="Decimal" Name="Quantity" Nullable="true" Precision="18" Scale="0" />
   </ComplexType>
 </Schema>

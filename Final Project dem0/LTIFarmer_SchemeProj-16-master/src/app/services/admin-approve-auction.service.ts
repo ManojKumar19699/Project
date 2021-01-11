@@ -13,7 +13,7 @@ export class AdminApproveAuctionService{
 
     finaliseBid(eg){
         console.log(eg);
-        return this.http.post(this.url+"ApproveAuctionAdmin/?Id="+ eg.Biddingid+"&adminId="+sessionStorage.getItem("aid"),"");
+        return this.http.post(this.url+"ApproveAuctionAdmin/?Id="+ eg.BiddingId+"&adminId="+sessionStorage.getItem("aid"),"");
     }
 
     // updateBidder(eg){

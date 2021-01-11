@@ -21,7 +21,7 @@ export class MailService{
         const httpheader={headers:new HttpHeaders({'Content-Type':'application/json'})};
         //debugger;
         //return this.http.put(this.url+"?mail="+mail+"&id="+sessionStorage.getItem("aid"),httpheader);
-        return this.http.post("http://localhost:64756/api/EmailSent/?mail="+mail+"&id="+sessionStorage.getItem("aid"),"");
+        return this.http.post("http://localhost:64756/api/EmailSent/?mail="+mail+"&Id="+sessionStorage.getItem("aid"),"");
     }
     ApprovalMail(usermail:string){
         return this.http.post(this.url+"approvalmail?to="+usermail,"");

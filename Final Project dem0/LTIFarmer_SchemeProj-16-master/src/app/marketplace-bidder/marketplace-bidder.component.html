@@ -1,5 +1,5 @@
-<p>marketplace-bidder works!</p>
-<div class="banner" id="banner">
+
+<div class="banner10" id="banner">
   <div class="bg-overlay">
 <br>
 <br>
@@ -9,14 +9,15 @@
 <br>
 <br>
 
-<table border="1" width="100%" cellspacing="0" cellpadding>
+<table border="1" width="100%" style="border: 1px black;"   cellspacing="0" cellpadding>
     <tr>
-        <th>BiddingID</th>
-        <th>CropType</th>
-        <th>CropName</th>
-        <th>InitialPrice</th>
-        <th>CurrentBidPrice</th>
-        <th>BidCloseTime</th>
+        <th style="text-align: center;">BiddingID</th>
+        <th style="text-align: center;">CropType</th>
+        <th style="text-align: center;">CropName</th>
+        <th style="text-align: center;">InitialPrice</th>
+        <th style="text-align: center;">CurrentBidPrice</th>
+        <th style="text-align: center;">BidCloseTime</th>
+        <th style="text-align: center;">Action</th>
 
 
     </tr>
@@ -27,7 +28,7 @@
         <td>{{b.InitialPrice}}</td>
         <td>{{b.CurrentBidPrice}}</td>
         <td>{{b.BidCloseTime}}</td>
-        <td><button type="button" (click)="gotoauction(b.BiddingId)">Go to Auction</button></td>
+        <td><button style="color: black;" type="button" (click)="gotoauction(b.BiddingId)">Go to Auction</button></td>
     </tr>
 </table>
 

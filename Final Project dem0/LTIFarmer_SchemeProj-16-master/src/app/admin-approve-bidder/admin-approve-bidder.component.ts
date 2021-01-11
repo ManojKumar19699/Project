@@ -34,19 +34,18 @@ export class AdminApproveBidderComponent implements OnInit {
     }
     // console.log(this.unapprovedbidders[i]);
     this.adminapprovebiddersService.updateBidder(this.unapprovedbidders[i]).subscribe((data)=>{console.log(data)});
-    // this.mailservice.ApprovalMail(this.unapprovedbidders[i].BidderEmail).subscribe((data)=>{
-    //   if(data=="mail sent"){
-    //     alert("Bidder Approved!");
-    //     location.reload();
-    //   }
-    //   else{
-    //     alert("Error! Try again");
-    //   }
-    // });  
+    location.reload();
+  //   this.mailservice.ApprovalMail(this.unapprovedbidders[i].BidderEmail).subscribe((data)=>{
+  //     if(data=="mail sent"){
+  //       alert("Bidder Approved!");
+  //       location.reload();
+  //     }
+  //     else{
+  //       alert("Error! Try again");
+  //     }
+  //   });  
 
     
-    this.ngOnInit();
-    //location.reload();
   }
 
 }

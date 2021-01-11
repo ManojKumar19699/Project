@@ -29,7 +29,6 @@ export class AdminApproveFarmerComponent implements OnInit {
     }
     console.log(this.unapprovedfarmers[i]);
     this.adminapprovefarmerservice.updateFarmer(this.unapprovedfarmers[i]).subscribe((data)=>{console.log(data)});
-    location.reload();
     // this.mailservice.ApprovalMail(this.unapprovedfarmers[i].FarmerEmail).subscribe((data)=>{
     //   if(data=="mail sent"){
     //     alert("Farmer Approved!");

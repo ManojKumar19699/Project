@@ -12,6 +12,8 @@ import { ClaimRequestService } from '../services/claimrequestservice';
 export class ClaiminsuranceComponent implements OnInit {
   response: any;
   listinsurance: any=[];
+  claiminsurance:any=[];
+  
   
   constructor(private inservice:ClaimRequestService) 
   {
@@ -42,6 +44,7 @@ showinsurance()
 
 claimRequest(container :NgForm)
   {
+    
     console.log(this.insclaim);
     if(this.insclaim.DateOfClaim<this.insclaim.DateOfLoss || this.ldate>this.currentdate){
       alert("Invalid dates ");

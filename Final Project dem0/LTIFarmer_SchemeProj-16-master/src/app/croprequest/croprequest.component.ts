@@ -29,16 +29,7 @@ export class CroprequestComponent implements OnInit {
   fileToUpload:File=null;
   dummyrequest:any={};
  
- /* addRequest(container:NgForm)
-  {
-    //this.CrpReq.push(this.dummyrequest);
-    //this.dummyrequest={};
-    this.response=this.crservice.cropService(container)
-    .subscribe((data) => {console.log(data);});
-    container.reset();
-    alert("Request Updated")
-
-  }*/
+ 
 
   handleFileInput(file: FileList) {
     this.fileToUpload=file.item(0);

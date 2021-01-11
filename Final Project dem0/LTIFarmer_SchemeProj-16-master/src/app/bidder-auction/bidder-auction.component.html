@@ -1,41 +1,24 @@
 
-<div class="banner" id="banner">
+<div class="banner10" id="banner">
     <div class="bg-overlay2">
-        <br><br>
-<!-- <button type="button" (click)="displaycrop()">fetch details</button>
-<table border="1" width="100%" cellspacing="0" cellpadding>
-    <tr>
-        <th>BiddingID</th>
-        <th>CropType</th>
-        <th>CropName</th>
-        <th>InitalPrce</th>
-        <th>CurrentBidPrice</th>
-        <th>BidCloseTime</th>
-
-
-    </tr>
-        <tr *ngFor="let b of currentcrops">
-            <td>{{b.Biddingid}}</td>
-            <td>{{b.CropType}}</td>
-            <td>{{b.CropName}}</td>
-            <td>{{b.InitalPrce}}</td>
-            <td>{{b.CurrentBidPrice}}</td>
-            <td>{{b.BidCloseTime}}</td>
-            <td><button type="button" (click)="placebid()">Go to Auction</button></td>
-        </tr>
-</table> -->
-<div>
+        <br>
+        <h2 style="text-align: center;">Welcome To Auction</h2>
+        <br><br><br><br><br>
 
 <div>
-    <h4><b>Bidding id:</b> &nbsp; &nbsp;&nbsp; {{currentcrop.Biddingid}}<br></h4>
-    <h4><b>CropType: </b> &nbsp; &nbsp;&nbsp; {{currentcrop.CropType}}<br></h4>
-    <h4><b>CropName:</b>  &nbsp; &nbsp;&nbsp; {{currentcrop.CropName}}<br></h4>
-    <h4><b>Quantity:</b>  &nbsp; &nbsp;&nbsp; {{currentcrop.Quantity}} Quintals<br></h4>
-    <h4><b>Minimum Sale Price:</b>  &nbsp; &nbsp;&nbsp; {{currentcrop.InitialPrice}}<br></h4>
-    <h4><b>Current Price:</b>  &nbsp; &nbsp;&nbsp; {{currentcrop.CurrentBidPrice}}<br></h4>
-    <h4><b>BidCloseTime:</b>  &nbsp; &nbsp;&nbsp; {{currentcrop.BidCloseTime | date: "shortTime" }}<br></h4>
+
+<div class="div2">
+    <div style="margin-left: 650px;">
+    <h4 style="text-align: left;"><b>Bidding id:</b> &nbsp; &nbsp;&nbsp; {{currentcrop.BiddingId}}<br></h4>
+    <h4 style="text-align: left;"><b>CropType: </b> &nbsp; &nbsp;&nbsp; {{currentcrop.CropType}}<br></h4>
+    <h4 style="text-align: left;"><b>CropName:</b>  &nbsp; &nbsp;&nbsp; {{currentcrop.CropName}}<br></h4>
+    <h4 style="text-align: left;"><b>Quantity:</b>  &nbsp; &nbsp;&nbsp; {{currentcrop.Quantity}} Quintals<br></h4>
+    <h4 style="text-align: left;"><b>Minimum Sale Price:</b>  &nbsp; &nbsp;&nbsp; {{currentcrop.InitialPrice}}<br></h4>
+    <h4 style="text-align: left;"><b>Current Price:</b>  &nbsp; &nbsp;&nbsp; {{currentcrop.CurrentBidPrice}}<br></h4>
+    <h4 style="text-align: left;"><b>BidCloseTime:</b>  &nbsp; &nbsp;&nbsp; {{currentcrop.BidCloseTime | date: "shortTime" }}<br></h4>
 </div>
-
+</div>
+<br>
 <div>
     <form #auctionplacebid="ngForm" (ngSubmit)="onSubmit(auctionplacebid)">
                         

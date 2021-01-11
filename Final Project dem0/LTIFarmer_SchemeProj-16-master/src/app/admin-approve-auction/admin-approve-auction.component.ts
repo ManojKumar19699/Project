@@ -21,10 +21,10 @@ export class AdminApproveAuctionComponent implements OnInit {
     console.log(this.unapprovedbids);
   }
 
-  approveauction(id){
+  approveauction(Id){
     let i;
     for(i=0;i<this.unapprovedbids.length;i++){
-      if(this.unapprovedbids[i].Biddingid==id) break;
+      if(this.unapprovedbids[i].BiddingId==Id) break;
     }
     console.log(this.unapprovedbids[i]);
     //this.adminapproveclaimservice.updateClaim(this.unapprovedclaims[i]);

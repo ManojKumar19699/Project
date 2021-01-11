@@ -37,4 +37,9 @@ export class AdminApproveCropService{
         //put
         return this.http.post(this.url+'ApproveCropAdmin/?Id='+ eg.RequestId+'&adminId='+eg.ApprovalAdminId+'&initprice='+eg.InitialPrice,'');        
       }
+
+     deletecrop(eg)
+     {
+         return this.http.delete(this.url+"DeleteCropAdmin/?Id="+eg.RequestId+"&adminId="+sessionStorage.getItem("aid"));
+     }
 }

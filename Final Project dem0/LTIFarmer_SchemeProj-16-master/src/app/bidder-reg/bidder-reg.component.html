@@ -1,53 +1,22 @@
 <br><br>
-<div id="myme" style="background-image: url('../assets/images/Agriculture.jpg');background-color: RGBA(15, 5, 20, 0.84);background-attachment: fixed;
+<div id="myme" style="background-image: url('../assets/images/bidimage.jpg');background-color: white;background-attachment: fixed;
 background-repeat: no-repeat; background-size: cover;">
     <div class="bg-overlay1">        
         <div class="container" style="border: 3px solid black; width: 100%; height:75%;">
             <br><br><br>
             <div class="row">
-                <div class="col-lg-6">
+        
                     <div class="banner-text">
                         <br><br>
-                        <h2 style="color: #EB233C">What you can do with AgriFarm</h2>
-                        <br><br>
-                        <ul style="color: white;padding-left: 30px;">&nbsp;&nbsp;
-                            <li style="font-size: 30px;">
-                                <h3 > Enroll Yourself on the AgroService to make bids!</h3>
-                                    
-                            </li>
-                            <li style="font-size: 30px; ">
-                                <h3 > Register Yourself with valid email address and mobile numbers
-                                    as part
-                                    of the registration process.</h3>
-                            </li>
-                            <li style="font-size: 30px; " >
-                                <h3 > After Logging in,You are allowed to bid for your desired Crops
-                                </h3>
-                            </li>
-                            <li style="font-size: 30px; ">
-                                <h3 > After Logging in, You will be able to see all the bidders who
-                                    are bidding on your crop.
-                                </h3>
-                            </li>
-                            <li style="font-size: 30px; ">
-                                <h3>Bid it!Book it!
-                                </h3>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-
-                    <div class="banner-text">
-                        <br><br>
-                        <h1 style="color: #EB233C">Bidder Registration Form</h1>
-                        <div class="col-lg-6">
-                            <h2 style="text-align: center;">Personal Details</h2><br>
+                        <h1 style="color:red;margin-left: 690px;margin-top: -40px;text-decoration: underline;">Bidder Registration Form</h1>
+                        <div class="col-lg-6" style="margin-left: 450px;">
+                            <div class="div2">
+                            <h2 style="text-align: center;text-decoration: underline;color: black;">Personal Details</h2><br>
                             <form #myForm="ngForm" (ngSubmit)="OnSubmit(BidderName,BidderEmail,BidderContactNo,BidderAddress, BidderCity
                 ,BidderState,BidderPincocde, BidderAadhar,BidderTradeLicense,BidderPassword,
                 AccountNo,IFSC_Code) ;  myForm.reset() ">
                                 <div class="form-group">
-                                    <label for="BidderName">Full Name</label>
+                                    <label for="BidderName" >Full Name</label>
                                     <input #BidderName="ngModel" type="text" class="form-control"
                                         [(ngModel)]=bidderdetails.BidderName id="BidderName" name="BidderName" required>
 
@@ -86,11 +55,7 @@ background-repeat: no-repeat; background-size: cover;">
                                 </div>
 
 
-                                <h2 style="text-align: center;">Address Details</h2>
-                                <!--<div class="col-lg-6">-->
-
-                                <!-- Call Me Form -->
-
+                                <h2 style="text-align: center;text-decoration: underline;color: black;">Address Details</h2>
                                 <div class="form-group">
                                     <label for="BidderAddress">Address </label>
                                     <input #BidderAddress="ngModel" type="text" class="form-control"
@@ -158,7 +123,7 @@ background-repeat: no-repeat; background-size: cover;">
 
 
 
-                                <h2 style="text-align: center;">Documents Upload</h2>
+                                <h2 style="text-align: center;text-decoration: underline;color: black;">Documents Upload</h2>
 
                                 <div class="form-group">
                                     <label for="BidderAadhar">Upload AADHAR Card</label>
@@ -209,7 +174,7 @@ background-repeat: no-repeat; background-size: cover;">
                                     <div *ngIf="(BidderConfirmPassword.dirty || BidderConfirmPassword.touched) && BidderConfirmPassword.invalid"
                                         style="color:red;">
                                         <p class="warning-text"
-                                            *ngIf="BidderConfirmPassword.hasError('notEqual') && BidderPassword.valid">
+                                            *ngIf="BidderConfirmPassword.hasError('notEqual') && BidderPassword.valid" style="color:red;">
                                             Passwords Don't Match
                                         </p>
                                     </div>
@@ -221,7 +186,7 @@ background-repeat: no-repeat; background-size: cover;">
 
                                 <!--<form #bankdetails="ngForm" (ngSubmit)="OnBankDetails(#bankdetails)" >-->
 
-                                <h2 style="text-align: center;">Bank Details</h2>
+                                <h2 style="text-align: center;text-decoration: underline;color: black;">Bank Details</h2>
 
                                 <div class="form-group">
                                     <label for="AccountNo">Account Number</label>
@@ -251,7 +216,7 @@ background-repeat: no-repeat; background-size: cover;">
                                 </div>
 
                                 <div class="form1">
-                                    <center><button type="reset" class="contact-button">Reset</button>
+                                    <center><button style="color: black;" type="reset" class="contact-button">Reset</button>
                                      <!-- </div>
                                      
                                      <div class="form1"> -->
@@ -261,6 +226,7 @@ background-repeat: no-repeat; background-size: cover;">
                                   </div>
                                 
                             </form>
+                        </div>
                             <br><br><br>
                         </div> 
                     </div> 

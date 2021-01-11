@@ -18,8 +18,8 @@ export class AdminApproveClaimService{
         eg.ApprovalAdminId=sessionStorage.getItem("aid");
         console.log(JSON.stringify(eg));
         //put
-        return this.http.post(this.url+'ApproveClaimAdmin/?id='+ eg.Cliamid+'&adminid='+eg.ApprovalAdminId,'');
-        //return this.http.post('https://localhost:44365/api/Admin/ApproveFarmer/?id=103&adminid=2','');
+        return this.http.post(this.url+'ApproveClaimAdmin/?Id='+ eg.CliamId+'&adminId='+eg.ApprovalAdminId,'');
+        
         
       }
 

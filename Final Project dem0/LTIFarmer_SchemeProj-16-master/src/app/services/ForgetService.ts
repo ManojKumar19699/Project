@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ForgotserviceService {
 
-  url : string = "http://localhost:61737/";
+  url : string = "http://localhost:64756/";
 
   constructor(private http : HttpClient ) { }
 

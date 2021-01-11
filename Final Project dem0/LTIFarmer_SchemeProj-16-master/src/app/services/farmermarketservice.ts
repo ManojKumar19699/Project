@@ -15,3 +15,5 @@ export class FarmerMarketService
             return this.http.get("http://localhost:64756/Farmerplace");
     }
 }
+
+// return this.http.get("http://localhost:64756/Farmerplace/?Id="+sessionStorage.getItem('auctionId'));

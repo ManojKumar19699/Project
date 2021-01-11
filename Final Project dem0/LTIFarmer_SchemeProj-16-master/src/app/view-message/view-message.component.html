@@ -34,7 +34,7 @@
 
         </div>
     </div>
-    <div class="modal fade" id="reply" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+    <!-- <div class="modal fade" id="reply" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header" style="color: red">
@@ -51,9 +51,9 @@
                             <div>
                                 <label for="From" style="color:black">Email From: &nbsp; &nbsp; </label><br>
                                 <input type="text" class="form-control" id="email" name="From" [(ngModel)]=reply.From #From="ngModel" required email>
-                            </div><br>
+                            </div><br> -->
                             <!-- Email validation -->
-                            <div *ngIf="!From?.valid && (From?.dirty || From?.touched)" class="error">
+                            <!-- <div *ngIf="!From?.valid && (From?.dirty || From?.touched)" class="error">
                                 <div *ngIf="From.errors.required">
                                     <small class="text-danger">From Emailid Required!</small>
                                 </div>
@@ -66,8 +66,8 @@
                                 <label for="To" style="color:black">Email To: &nbsp; &nbsp; </label><br>
                                 <input type="text" class="form-control" id="email" name="To" [(ngModel)]=reply.To #To="ngModel" required email>
                             </div><br>
-                            <!-- Email validation -->
-                            <div *ngIf="!To?.valid && (To?.dirty || To?.touched)" class="error">
+                            Email validation -->
+                            <!-- <div *ngIf="!To?.valid && (To?.dirty || To?.touched)" class="error">
                                 <div *ngIf="To.errors.required">
                                     <small class="text-danger">To Emailid Required!</small>
                                 </div>
@@ -80,9 +80,9 @@
                             <div>
                                 <label for="Subject" style="color:black">Subject: &nbsp; &nbsp; </label><br>
                                 <input type="text" class="form-control" id="name" name="Subject" [(ngModel)]=reply.Subject #Subject="ngModel" required>
-                            </div><br>
+                            </div><br> -->
                             <!-- Email validation -->
-                            <div *ngIf="!Subject?.valid && (Subject?.dirty || Subject?.touched)" class="error">
+                            <!-- <div *ngIf="!Subject?.valid && (Subject?.dirty || Subject?.touched)" class="error">
                                 <div *ngIf="Subject.errors.required">
                                     <small class="text-danger">Subject Required!</small>
                                 </div>
@@ -92,9 +92,9 @@
                             <div>
                                 <label for="Body" style="color:black">Enter Message: &nbsp; &nbsp; </label><br>
                                 <textarea class="form-control " placeholder="Message" rows="4" name="Body" [(ngModel)]=reply.Body #Body="ngModel" required></textarea>
-                            </div>
+                            </div> -->
                             <!-- Message validation -->
-                            <div *ngIf="!Body?.valid && (Body?.dirty || Body?.touched)" class="error">
+                            <!-- <div *ngIf="!Body?.valid && (Body?.dirty || Body?.touched)" class="error">
                                 <div *ngIf="Body.errors?.required">
                                     <small class="text-danger">Message Required!</small>
                                 </div>
@@ -111,7 +111,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </div>
 </div>

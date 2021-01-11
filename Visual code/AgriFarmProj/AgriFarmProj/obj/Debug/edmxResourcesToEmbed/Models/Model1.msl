@@ -174,5 +174,54 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_saleshistory" FunctionName="dbProjectModel.Store.sp_saleshistory">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbProjectModel.sp_saleshistory_Result">
+          <ScalarProperty Name="SaleDate" ColumnName="SaleDate" />
+          <ScalarProperty Name="CropName" ColumnName="CropName" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="MinSalePrice" ColumnName="MinSalePrice" />
+          <ScalarProperty Name="SoldPrice" ColumnName="SoldPrice" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_salehistoryfarmer" FunctionName="dbProjectModel.Store.sp_salehistoryfarmer">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbProjectModel.sp_salehistoryfarmer_Result">
+          <ScalarProperty Name="SaleDate" ColumnName="SaleDate" />
+          <ScalarProperty Name="CropName" ColumnName="CropName" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="MinSalePrice" ColumnName="MinSalePrice" />
+          <ScalarProperty Name="SoldPrice" ColumnName="SoldPrice" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_farmermarket" FunctionName="dbProjectModel.Store.sp_farmermarket">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbProjectModel.sp_farmermarket_Result">
+          <ScalarProperty Name="CropType" ColumnName="CropType" />
+          <ScalarProperty Name="CropName" ColumnName="CropName" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="InitialPrice" ColumnName="InitialPrice" />
+          <ScalarProperty Name="CurrentBidPrice" ColumnName="CurrentBidPrice" />
+          <ScalarProperty Name="BidCloseTime" ColumnName="BidCloseTime" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_approveauction" FunctionName="dbProjectModel.Store.sp_approveauction">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbProjectModel.sp_approveauction_Result">
+          <ScalarProperty Name="BiddingId" ColumnName="BiddingId" />
+          <ScalarProperty Name="BidderId" ColumnName="BidderId" />
+          <ScalarProperty Name="InitialPrice" ColumnName="InitialPrice" />
+          <ScalarProperty Name="CurrentBidPrice" ColumnName="CurrentBidPrice" />
+          <ScalarProperty Name="BidCloseTime" ColumnName="BidCloseTime" />
+          <ScalarProperty Name="ApprovalAdminId" ColumnName="ApprovalAdminId" />
+          <ScalarProperty Name="FarmerId" ColumnName="FarmerId" />
+          <ScalarProperty Name="CropName" ColumnName="CropName" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

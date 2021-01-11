@@ -17,33 +17,13 @@ namespace AgriFarmProj.Controllers
             {
                 if (usertype.Equals("farmer"))
                 {
-                    var sales = (from s in db.tblSales
-                                 where s.FarmerId == Id && s.ApprovalAdminId != null
-                                 select s).ToList();
-
-                    if (sales.Count > 0)
-                    {
-                        return Request.CreateResponse(HttpStatusCode.OK, sales);
-                    }
-                    else
-                    {
-                        return Request.CreateResponse(HttpStatusCode.NotFound, "Data not found");
-                    }
+                    List<sp_salehistoryfarmer_Result> res = db.sp_salehistoryfarmer(Id).ToList();
+                    return Request.CreateResponse(HttpStatusCode.OK, res);
                 }
                 else if (usertype.Equals("bidder"))
                 {
-                    var sales = (from s in db.tblSales
-                                 where s.BidderId == Id && s.ApprovalAdminId != null
-                                 select s).ToList();
-
-                    if (sales.Count > 0)
-                    {
-                        return Request.CreateResponse(HttpStatusCode.OK, sales);
-                    }
-                    else
-                    {
-                        return Request.CreateResponse(HttpStatusCode.NotFound, "Data not found");
-                    }
+                    List<sp_saleshistory_Result> res1 = db.sp_saleshistory(Id).ToList();
+                    return Request.CreateResponse(HttpStatusCode.OK, res1);
                 }
                 else
                 {

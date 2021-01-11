@@ -4,9 +4,8 @@ export class InsuranceApp{
     Year: string;
     CropName:string;
     SumAssured: number;
-    //DateOfInsurance: string;
     SumAssuredPerHec:number;
     Area:number;
     Premium:number;
-    Farmerid:string;
+    FarmerId:string;
 }

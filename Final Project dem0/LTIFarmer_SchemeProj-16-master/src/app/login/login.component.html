@@ -6,10 +6,11 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="text-center">
-                    <h3>Login Here!</h3>
+                    <h3>Login</h3>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6" style="margin-left: 300px;margin-top: -20px;">
+                <div class="div2">
                 <div class="contact-form1">
                     <form role="form" #loginform="ngForm" (ngSubmit)="OnLogin(loginform)">
                         <div>
@@ -41,14 +42,16 @@
 
                         <div>
                             <label for="UserType">Enter User Type: </label><br>
+                            <div style="color: blanchedalmond;">
                             <input type="radio" name="UserType" value="Admin" [(ngModel)]=login.UserType #UserType="ngModel">Admin &nbsp;&nbsp;
                             <input type="radio" name="UserType" value="Farmer" [(ngModel)]=login.UserType #UserType="ngModel">Farmer &nbsp;&nbsp;
                             <input type="radio" name="UserType" value="Bidder" [(ngModel)]=login.UserType #UserType="ngModel">Bidder &nbsp;&nbsp;
+                        </div>
                         </div><br>
 
                         <br>
                         <a (click)="gotoForgPass()">
-                            Forgot Password for Registered Users !!!
+                            Forgot Password?
                         </a>
                         <br><br><br>
                         <a (click)="gotoRegDash()">
@@ -56,18 +59,17 @@
                         </a>
                         
                         <div class="col-md-12 text-center ">
-                            <button type="submit " class="contact-button" [disabled]=!loginform.valid>Login</button>
+                            <button style="color: black;" type="submit " class="contact-button" [disabled]=!loginform.valid>Login</button>
                         </div>
                     </form>
+                </div>
+                <br><br>
 
                 </div>
+<br><br>
+            </div>
 
-            </div>
-            <div class="col-md-6">
-                <br><br><br>
-                
-                <img src="assets/images/login.jpg" alt="about" width="90%" height="90%" />
-            </div>
+           
         </div>
     </div>
 </div>

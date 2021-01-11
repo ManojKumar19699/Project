@@ -4,8 +4,9 @@
   <div class="bg-overlay3">
 
 <h2>Welcome To Crop Request Page</h2>
-<div class ="wrk">
+<div class ="wrk" style="margin-right: 50%;">
 <div class="container">
+  <div class="div2">
 <form role="form" #crpreq="ngForm" (ngSubmit)="OnSubmit(CropType,CropName,Quantity,FertilizerType,SoilPhCertificate); crpreq.reset()">
     <div class="form-group">
         <label for="CropType"> Crop Type :</label>
@@ -53,6 +54,7 @@
 
     <button type="submit" class="contact-button" style="background:green;" [disabled]="SoilPhCertificate.value == ''">Submit</button>
 </form>
+</div>
 
 </div>
 </div>
